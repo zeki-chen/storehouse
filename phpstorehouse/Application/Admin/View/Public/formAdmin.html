@@ -1,0 +1,49 @@
+<taglib name="Ycform" />
+<div class="     ">
+	<div class="formtitle ">
+		<span>管理员账户信息</span>
+		<div class="slideup slideup_sub" tabid="tabid1"></div>
+	</div>
+	<div class="tab mt10" id="tabid1">
+		<table class="formtable ">
+			<tbody>
+				
+				<eq name="Think.ACTION_NAME" value="add">
+					<Ycform:input title="管理员名称" name="aname" need="*" datatype="checkName,*" tips="请填写管理员名称" class="w200" errormsg="该用户名已被占用" value="{$model.aname}"></Ycform:input>
+
+					<Ycform:password title="密码" name="pwd" need="*" datatype="*6-18" tips="请填写密码" class="w200" value="{$model.pwd}"></Ycform:password>
+					
+					<Ycform:password title="确认密码" name="" need="*" datatype="*6-18" tips="请填写确认密码" class="w200" value="{$model.pwd}" recheck="pwd"></Ycform:password>
+				<else/>
+					<tr>
+						<td class="ft_title">管理员名称</td>
+						<td>
+							{$model.aname}	
+							<input type="hidden" name="aname" value="{$model.aname}" />
+						</td>
+					</tr>
+				</eq>
+
+				<Ycform:input title="真实姓名" name="realname"  tips="请填写真实姓名(选填)" class="w200" value="{$model.realname}"></Ycform:input>
+
+				<Ycform:input title="手机号码" name="tel" ignore="ignore" datatype="m" tips="请填写手机号码(选填)" errormsg="请填写正确的手机号码" class="w200" value="{$model.tel}"></Ycform:input>
+
+				<Ycform:select title="角色" name="ar_id" need="*" datatype="*" tips="请选择角色" class="" value="{$model.ar_id}" options="roleList"></Ycform:select>
+				
+				<Ycform:radio title="是否有效" name="valid" value="{$model.valid|default=1}" need="*" datatype="*" tips="请选择是否有效" options="yesno"></Ycform:radio>
+
+				<tr>
+					<td></td>
+					<td colspan="3">
+						<input type="hidden" name="updatetime" value="{:time()}" />
+						<input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+						<input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="h10"></div>
+</div>
+
+

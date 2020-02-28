@@ -1,0 +1,129 @@
+<taglib name="Ycform" />
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/webuploader-0.1.5/webuploader.css" /> -->
+<!-- <script type="text/javascript" src="__PUBLIC__/webuploader-0.1.5/webuploader.js"></script> -->
+<div class="     ">
+<div class="formtitle ">
+        <span>{$config['model_name']}信息</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <!--基本信息-->
+        <table class="formtable" id="basicinfo">
+            <tbody>
+            <Ycform:input title="文章标题" name="title" need="*" datatype="*" tips="请填写文章标题" class="w300"
+                          value="{$model.title}"></Ycform:input>
+            <eq name="config['art_class']" value="1">
+            <Ycform:select title="分类" name="cid" need="*" datatype="*" tips="请选择分类" class="" value="{$model.cid}" options="classList"></Ycform:select>
+            </eq>
+            <foreach name="field" item="item">
+                <switch name="item['type']">
+                    <case value="0">
+                        <Ycform:input title="{$item['field_name']}" name="{$item['code']}" tips="请填写{$item['field_name']}" need="{$item['need']}" datatype="{$item['datatype']}" class="{$item['css']}" value="{$model[$item['code']]}"></Ycform:input>
+                    </case>
+                    <!--类型1 多行文本框-->
+                    <case value="1">
+                        <Ycform:textarea title="{$item['field_name']}" name="{$item['code']}" tips="请填写{$item['field_name']}" need="{$item['need']}" datatype="{$item['datatype']}" class="{$item['css']}" value="{$model[$item['code']]}"></Ycform:textarea>
+                    </case>
+                    <case value="2"></case>
+                    <!--类型3 文本编辑器-->
+                    <case value="3">
+                        <Ycform:ueditor id="content" title="{$item['field_name']}" name="{$item['code']}" tips="请填写{$item['field_name']}" need="{$item['need']}" datatype="{$item['datatype']}" class="{$item['css']}" value="{$model[$item['code']]}" trid="contenttr" trclass="" style="height:300px"></Ycform:ueditor>
+                    </case>
+                    <!--类型4 时间选择框-->
+                    <case value="4">
+                        <Ycform:input title="{$item['field_name']}" name="{$item['code']}" need="{$item['need']}" datatype="{$item['datatype']}" tips="请填写{$item['field_name']}" class="w100 Wdate" value="{$model[$item['code']]|date='Y-m-d',###}" onclick="WdatePicker()"></Ycform:input>
+                    </case>
+                    <!--类型5 单选按钮-->
+                    <case value="5">
+                        <Ycform:radio title="{$item['field_name']}" name="{$item.code}" value="{$model[$item['code']]|default=1}" need="{$item['need']}" datatype="{$item['datatype']}" tips="请选择{$item['field_name']}" options="yesno"></Ycform:radio>
+
+                    </case>
+                    <!-- 类型6 图片上传 -->
+                    <case value="6">
+                        <tr>
+                            <td class="ft_title">{$item.field_name}</td>
+                            <td>
+                                <Ycform:webuploadPic id="{$item['code']}" addbtn="{$item['code']}btn" name="{$item['code']}" sumsize="{$item['sumsize']}" singlesize="{$item['singlesize']}" count="{$item['count']}" datatype="{$item['datatype']}" value="{$model[$item['code']]}" tips="请上传{$item.field_name}" compress="{$item['compress']}" tip="{$item['tips']}"></Ycform:webuploadPic>
+                            </td>
+                        </tr>
+                    </case>
+                    <!-- 类型7 文件上传 -->
+                    <case value="7">
+                        <tr>
+                            <td class="ft_title">{$item.field_name}</td>
+                            <td>
+                                <Ycform:webuploadFile id="{$item['code']}" addbtn="{$item['code']}btn" name="{$item['code']}" sumsize="{$item['sumsize']}" singlesize="{$item['singlesize']}" count="{$item['count']}" datatype="{$item['datatype']}" value="{$model[$item['code']]}" tips="请上传{$item.field_name}" tip="{$item['tips']}"></Ycform:webuploadFile>
+                            </td>
+                        </tr>
+                    </case>
+                    <!-- 类型8 视频上传 -->
+                    <case value="8">
+                        <tr>
+                            <td class="ft_title">视频类型</td>
+                            <td>
+                                <label class="radio-inline"><input type="radio" name="video_type" value="0" class="ycRadio" <eq name="model['video_type']|default=0" value="0">checked</eq>>网络视频</label>
+                                <label class="radio-inline"><input type="radio" name="video_type" value="1" class="ycRadio" <eq name="model['video_type']" value="1">checked</eq>>本地上传</label>
+                            </td>
+                        </tr>
+                        <tr id="online_video" style="display: none;">
+                            <td class="ft_title">视频链接地址</td>
+                            <td>
+                                <textarea type="text" name="{$item['code']}" class="bds inp  w300 h100" errormsg="请填写视频链接地址" nullmsg="请填写视频链接地址" placeholder="请填写视频链接地址">{$model['video']}</textarea>
+                                <span class="Validform_checktip">请填写视频链接地址</span>
+                            </td>
+                        </tr>
+                        <tr id="outline_video" style="display: none;">
+                            <td class="ft_title">本地上传视频</td>
+                            <td>
+                                <Ycform:webuploadFile id="{$item['code']}" addbtn="{$item['code']}btn" name="{$item['code']}" sumsize="{$item['sumsize']}" singlesize="{$item['singlesize']}" count="{$item['count']}" datatype="{$item['datatype']}" value="{$model[$item['code']]}" tips="请上传本地视频" type="video" tip="{$item['tips']}"></Ycform:webuploadFile>
+                            </td>
+                        </tr>
+                        <script>
+                            $(function(){
+                                var video_type={$model['video_type']|default=0};
+                                if(video_type==0){
+                                    $("#online_video").css('display','');
+                                    $("#online_video input").removeAttr('disabled');
+                                }else if(video_type==1){
+                                    $("#online_video textarea").val('');
+                                    $("#outline_video").css('display','');
+                                    $("#outline_video input").removeAttr('disabled');
+                                }
+                                $("input[name='video_type']").change(typeChange);
+                            });
+
+                            function typeChange(){
+                                var type=$(this).val();
+                                if(type==0){
+                                    $("#online_video").css('display','');
+                                    $("#online_video input").removeAttr('disabled');
+                                    $("#outline_video").css('display','none');
+                                    $("#outline_video input").attr('disabled','true');
+                                }else if(type==1){
+                                    $("#outline_video").css('display','');
+                                    $("#outline_video input").removeAttr('disabled');
+                                    $("#online_video").css('display','none');
+                                    $("#online_video input").attr('disabled','true');
+                                    new ycUploadFile({"1":"{$item['sumsize']}","sumsize":"{$item['sumsize']}","inputName":"{$item['code']}","pick_id":"#{$item['code']}btn","id":"#{$item['code']}","singlesize":"{$item['singlesize']}","count":"{$item['count']}","extensions":"mp4,flv"});
+                                }
+                            }
+                        </script>
+                    </case>
+                </switch>
+            </foreach>
+
+            <Ycform:input title="排序" name="sort" need="*" datatype="n" tips="请填写排序" class="w80" value="{$model.sort|default=99}"></Ycform:input>
+
+            <Ycform:radio title="是否显示" name="is_show" value="{$model.is_show|default=1}" need="*" datatype="*" tips="请选择是否显示" options="yesno"></Ycform:radio>
+            </tbody>
+        </table>
+        <!--基本信息-->
+
+        <div class="formbtn">
+            <input type="hidden" name="updatetime" value="{:time()}" />
+            <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+            <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+        </div>
+    </div>
+    <div class="h10"></div>
+</div>

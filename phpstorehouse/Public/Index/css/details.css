@@ -1,0 +1,15 @@
+.minute .details_box { float: left; width: 693px; margin-top: 31px; }
+.minute .details_box .essay { width: 674px; margin: 0 auto; color: #333333; }
+.minute .details_box .essay .title { margin-top: 17px; padding: 11px 21px; font-size: 24px; text-align: center; }
+.minute .details_box .essay .info { font-size: 14px; padding-top: 7px; text-align: center; }
+.minute .details_box .essay .info .item { padding: 0 10px; text-align: center; }
+.minute .details_box .essay .content { font-size: 14px; width: 666px; margin: 0 auto; text-align: justify; padding-top: 20px; line-height: 1.8; }
+.minute .details_box .essay .content p img { max-width: 640px  !important; margin: 12px auto !important; }
+.minute .details_box .essay .attachment { font-size: 14px; padding: 20px 0 40px 0; }
+.minute .details_box .essay .attachment .attachment_name { color: #dc5548; }
+.minute .details_box .essay .attachment .attachment_content { margin-left: 28px; }
+.minute .details_box .essay .attachment .attachment_content a { color: #008ac9; }
+
+#map { width: 600px; height: 300px; margin: 30px auto; }
+
+/*# sourceMappingURL=details.css.map */

@@ -1,0 +1,200 @@
+<include file="Public:doctype" />
+	<head>
+		<include file="Public:basicHead" />
+	</head>
+
+	<body>
+
+		<include file="Public:bread" />
+
+		<div class="rightinfo">
+
+			<div class="tools">
+
+				<ul class="toolbar">
+					<li class="click">
+						<a href="javascript:databack()">
+							<span><img src="__PUBLIC__/Admin/images/t01.png" /></span>备份</a>
+					</li>
+					<li class="click">
+						<a href="javascript:delMut('{:U("SysData/doDel")}')">
+							<span><img src="__PUBLIC__/Admin/images/t03.png" /></span>删除</a>
+					</li>
+				</ul>
+
+				<form action="{:U('SysData/index')}" method="get">
+					<ul class="toolbar1">
+						<li>关键词：
+							<input type="text" name="keyword" class="scinput" placeholder="请输入关键词" value="{$keyword}" />
+						</li>
+						<li>
+							<input type="submit" class="scbtn button_primary" value="查询" />
+						</li>
+
+					</ul>
+				</form>
+
+			</div>
+
+			<table class="tablelist" id="exampletable">
+				<thead>
+					<tr>
+						<th width="60">
+							<label class="">
+								<input type="checkbox" class="selectAll" />全选
+							</label>
+						</th>
+						<th width="" class="tl">文件名</th>
+						<th width="80">类型</th>
+						<th width="80">大小</th>
+						<th width="150" class="tc">创建时间</th>
+						<th width="120">操作</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+
+			<div class="pagin">
+				{$pages}
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			$('.tablelist tbody tr:odd').addClass('odd');
+
+			function databack() {
+				var url = "{:U('SysData/doBak')}";
+				loading("备份中，请稍候...");
+				$.get(url, function(data) {
+					msgOK(data.info);
+					hrefTo("{:get_url()}", 500);
+				}, "json");
+			}
+			$(function() {
+				$(".recBtn").click(function() {
+					var url = $(this).attr("href");
+					$(this).removeAttr("href");
+					layer.confirm('确定要还原 ' + $(this).attr('del_title') + ' 吗？', {
+						btn: ['确定', '取消'] //按钮
+					}, function() {
+						loading("正在还原...");
+						$.get(url, function(data) {
+							if (data.status == 1) {
+								msgOK(data.info);
+							} else {
+								msgFaild(data.info);
+							}
+							if (data.url) {
+								//loading("正在提交");
+								loading(data.info + ",跳转中...");
+								hrefTo(data.url, 500)
+							}
+						}, "json");
+					}, function() {
+						//取消时操作
+					});
+					$(this).attr("href", url);
+					return false;
+				});
+			})
+		</script>
+
+        <script>
+            //分页显示数据
+            $(function(){
+                $('.pagin a').live('click',pageClick);
+            });
+            var list={$list};
+            var total_page=list.page;//总页数
+            var data=list.data;//数据集合
+            var page=1;//当前页数
+            var pageSize=list.pageSize;//分页大小
+            var count=list.count;//数据集数量
+
+            if(count!=0){
+                showPage(page,total_page);
+                showData(page);
+            }
+
+            //构造分页
+            function showPage(page,total_page){
+                var Page='';//
+                var now_cool_page=5.5;
+                var ceil_now_cool_page=6;
+                var pageHtml='<div>';//分页HTML
+                if(total_page>11&&(page-now_cool_page)>=1){
+                    pageHtml+='<a class="first" page="1" href="###1">1...</a>';
+                }
+                if(page>1){
+                    pageHtml+='<a class="prev" page="'+(page-1)+'" href="###'+(page-1)+'">&lt;&lt;</a>';
+                }
+                for(var i=1;i<=11;i++){
+                    if((page-now_cool_page)<=0){
+                        Page=i;
+                    }else if((parseFloat(page)+parseFloat(now_cool_page)-1)>total_page){
+                        Page=total_page-11+i;
+                    }else{
+                        Page=page-ceil_now_cool_page+i;
+                    }
+                    if(Page>0&&Page!=page){
+                        if(Page<=total_page){
+                            pageHtml+='<a class="num" page="'+Page+'" href="###'+Page+'">' + Page + '</a>';
+                        }else{
+                            break;
+                        }
+                    }else{
+                        if(Page>0&&total_page!=1){
+                            pageHtml+='<span class="current">' + Page + '</span>'
+                        }
+                    }
+                }
+                if(page<total_page){
+                    pageHtml+='<a class="next" page="'+(parseInt(page)+1)+'" href="###'+(parseInt(page)+1)+'">&gt;&gt;</a>'
+                }
+                if(page<total_page-now_cool_page){
+                    pageHtml+='<a class="end" page="'+total_page+'" href="###'+total_page+'">'+total_page+'</a>'
+                }
+                pageHtml+='</div>';
+//                console.log(pageHtml);
+                $('.pagin').html(pageHtml);
+            }
+
+            //切换分页
+            function pageClick(){
+                loading('处理中...');
+                page=$(this).attr('page');
+                showPage(page,total_page);
+                showData(page);
+                layer.closeAll();
+            }
+
+            //显示数据
+            function showData(page){
+                var tbody=$('#tbody');
+                tbody.html('');
+                var start=(page-1)*pageSize;
+                var end=page*pageSize-1;
+                if(page==total_page){
+                    end=count-1;
+                }
+                for(var i=start;i<=end;i++){
+                    var html='';
+                    html+='<tr>';
+                    html+='<td><input type="checkbox" value="'+data[i]['url_path']+'" class="del_checkbox" /></td>';
+                    html+='<td class="tl">'+data[i]['name']+'</td>';
+                    html+='<td>'+data[i]['ext']+'</td>';
+                    html+='<td>'+data[i]['size']+'</td>';
+                    html+='<td>'+data[i]['addtime']+'</td>';
+                    html+='<td><a href="'+data[i]['doRecovery']+'" class="recBtn tablelink" del_title="'+data[i]['name']+'"> 还原</a> &nbsp;|&nbsp;';
+                    html+='<a href="'+data[i]['doDel']+'" class="delBtn tablelink" del_title="'+data[i]['name']+'"> 删除</a> </td>';
+                    html+='</tr>';
+                    tbody.append(html);
+                }
+            }
+        </script>
+
+	</body>
+
+</html>

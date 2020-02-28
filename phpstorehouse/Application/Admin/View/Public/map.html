@@ -1,0 +1,100 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<include file="Public:basicHead" />
+
+	</head>
+
+	<body>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=is0ThnOIy9pCjzRU6mmYhrBp"></script>
+		<script type="text/javascript">
+			var lngDefault={$lng};
+			var latDefault={$lat};
+			var map,localSearch,mark;
+
+			function init() {
+				map = new BMap.Map("container", {enableMapClick:false});
+			    // map.centerAndZoom("25.051957", 16);
+			    map.centerAndZoom(new BMap.Point(lngDefault, latDefault), 14);
+			    map.enableScrollWheelZoom();    //启用滚轮放大缩小，默认禁用
+			    map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+			    map.addControl(new BMap.ScaleControl());
+			    mark = new BMap.Marker(new BMap.Point(lngDefault, latDefault));  // 创建标注，为要查询的地方对应的经纬度
+				map.addOverlay(mark);	// 添加标示
+				mark.enableDragging();
+			    mark.addEventListener("dragging",function(){
+			    	var p = mark.getPosition();       //获取marker的位置
+			        document.getElementById("lng").value = p.lng;
+			        document.getElementById("lat").value = p.lat;
+			    });
+			    map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+			    localSearch = new BMap.LocalSearch(map);
+			    localSearch.enableAutoViewport(); //允许自动调节窗体大小			    
+				map.addEventListener("click", mapClick);
+				map.panTo(new BMap.Point(lngDefault, latDefault));
+			}
+			function mapClick(e){
+//				alert(e.point.lng + ", " + e.point.lat);
+				mark.setPosition(new BMap.Point(e.point.lng,e.point.lat));
+				document.getElementById("lng").value = e.point.lng;
+			        document.getElementById("lat").value = e.point.lat;
+			}
+		   
+		    function searchByStationName() {
+		        map.clearOverlays();//清空原来的标注
+		        var keyword = document.getElementById("address").value;
+		        localSearch.setSearchCompleteCallback(function (searchResult) {
+		            var poi = searchResult.getPoi(0);
+		            document.getElementById("lng").value = poi.point.lng;
+		            document.getElementById("lat").value = poi.point.lat;
+		            map.centerAndZoom(poi.point, 14);
+		            var marker = new BMap.Marker(new BMap.Point(poi.point.lng, poi.point.lat));  // 创建标注，为要查询的地方对应的经纬度
+		            map.addOverlay(marker);
+		            marker.enableDragging();
+		            marker.addEventListener("dragging",function(){
+				    	var p = marker.getPosition();       //获取marker的位置
+				        document.getElementById("lng").value = p.lng;
+				        document.getElementById("lat").value = p.lat;
+				    });
+		        });
+		        localSearch.search(keyword);
+		    } 
+		    $(function() {
+				init();
+				$("#container").height($(window).height()-37);
+				//查询地址
+				$("#mapform").submit(function() {
+					searchByStationName();
+					return false;
+				});
+				//点击确定
+				$("#yesBtn").click(function() {
+					
+					window.parent.setLngLat($("#lng").val(),$("#lat").val());
+				});
+			});
+		</script>
+		<div class="map_body">
+			<div style="width:100%;height:98%;position: absolute;top:37px" id="container"></div>
+			<div style="position: absolute;width: 100%;background: #fff;">
+				<div class="map_form p5 tl w300 fl ">
+					<form id="mapform">
+						<input type="text" placeholder="请输入地名,如韶关市第一中学" class="w200 inp bds" value="" id="address" />
+						<input type="submit" id="submit" value="查询" class="inp" />
+					</form>
+				</div>
+				<div class="map_form p5 tr w400 fr ">
+					经度：
+					<input type="text" class="w80 inp bds" id="lng" value="{$lng}" /> 纬度：
+					<input type="text" class="w80 inp bds" id="lat" value="{$lat}" />
+					<input type="button" id="yesBtn" value="确定并退出" class="inp" />
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

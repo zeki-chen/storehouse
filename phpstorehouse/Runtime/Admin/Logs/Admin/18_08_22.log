@@ -1,0 +1,588 @@
+[ 2018-08-22T15:59:26+08:00 ] ::1 /storehouse/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0140s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: sys_name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 6 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.103006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.103006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:27+08:00 ] ::1 /storehouse/admin.php/Index/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:39+08:00 ] ::1 /storehouse/admin.php/Index/doLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `voc_admin` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `voc_admin` WHERE `aname` = 'admin' AND `pwd` = 'e10adc3949ba59abbe56e057f20f883e' AND `valid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-08-22T15:59:40+08:00 ] ::1 /storehouse/admin.php/Main/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `voc_admin` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0150s ]
+SQL: SELECT voc_admin.aid AS aid,voc_admin.aname AS aname,voc_admin.pwd AS pwd,voc_admin.realname AS realname,voc_admin.valid AS valid,voc_admin.ar_id AS ar_id,voc_admin.tel AS tel,voc_admin.addtime AS addtime,voc_admin.updatetime AS updatetime,admin_role.ar_name AS ar_name,admin_role.ap_codes AS ap_codes FROM voc_admin voc_admin LEFT JOIN admin_role admin_role ON voc_admin.ar_id=admin_role.ar_id WHERE voc_admin.aname = 'admin' AND voc_admin.pwd = 'e10adc3949ba59abbe56e057f20f883e' AND voc_admin.valid = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-22T15:59:40+08:00 ] ::1 /storehouse/admin.php/Main/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: sys_name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\4ed54719134818f873ee1e2d5ba6abad.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-22T15:59:40+08:00 ] ::1 /storehouse/admin.php/Main/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0030s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: sys_name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\1b87400a8028c67ea252084b4f2cbce5.php 第 5 行.
+NOTIC: [8] Undefined variable: modelList D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\1b87400a8028c67ea252084b4f2cbce5.php 第 154 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:40+08:00 ] ::1 /storehouse/admin.php/Warehouse/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0080s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Warehouse/index.html','查看商品列表','view','http://localhost/storehouse/admin.php/Main/left.html','Warehouse','index','1534924780') [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `warehouse` [ RunTime:0.0360s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `warehouse` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `warehouse` ORDER BY wa_id desc LIMIT 0,15   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\aa3e8f895e64ef891453a039cf36671a.php 第 136 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\aa3e8f895e64ef891453a039cf36671a.php 第 176 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\aa3e8f895e64ef891453a039cf36671a.php 第 176 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:41+08:00 ] ::1 /storehouse/admin.php/Main/footer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: sys_name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\738213e29422e2f8c83eae40bf2e5adc.php 第 6 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-08-22T15:59:42+08:00 ] ::1 /storehouse/admin.php/Stock/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0030s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index1.html','查看入库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index1','1534924782') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stock_in` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_in` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `stock_in` ORDER BY sti_id desc LIMIT 0,15   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:45+08:00 ] ::1 /storehouse/admin.php/Stock/index2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index2.html','查看出库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index2','1534924785') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `stock_out` [ RunTime:0.0650s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_out` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stock_out` ORDER BY sto_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:46+08:00 ] ::1 /storehouse/admin.php/Stock/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0030s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index1.html','查看入库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index1','1534924786') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stock_in` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_in` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `stock_in` ORDER BY sti_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-22T15:59:47+08:00 ] ::1 /storehouse/admin.php/Stock/index2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index2.html','查看出库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index2','1534924787') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stock_out` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_out` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stock_out` ORDER BY sto_id desc LIMIT 0,15   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:48+08:00 ] ::1 /storehouse/admin.php/Stock/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index1.html','查看入库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index1','1534924788') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stock_in` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_in` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `stock_in` ORDER BY sti_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:48+08:00 ] ::1 /storehouse/admin.php/Stock/index2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index2.html','查看出库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index2','1534924788') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stock_out` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_out` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `stock_out` ORDER BY sto_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\78ee52321bbacd014379180cb2cdd029.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-22T15:59:54+08:00 ] ::1 /storehouse/admin.php/jiedian/index2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/jiedian/index2.html','查看节点2列表','view','http://localhost/storehouse/admin.php/Main/left.html','Jiedian','index2','1534924794') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jiedian2` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jiedian2` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jiedian2` ORDER BY jd_id desc LIMIT 0,15   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\baab52a4d965eb774863a1d7b4555fc4.php 第 184 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-22T15:59:55+08:00 ] ::1 /storehouse/admin.php/jiedian/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/jiedian/index1.html','查看节点1列表','view','http://localhost/storehouse/admin.php/Main/left.html','Jiedian','index1','1534924795') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jiedian1` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jiedian1` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jiedian1` ORDER BY jd_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\618a3e3dbcd79282f453a08e3106e3b3.php 第 184 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-22T15:59:55+08:00 ] ::1 /storehouse/admin.php/jiedian/index3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/jiedian/index3.html','查看节点3列表','view','http://localhost/storehouse/admin.php/Main/left.html','Jiedian','index3','1534924795') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jiedian3` [ RunTime:0.0270s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jiedian3` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jiedian3` ORDER BY jd_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 184 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 180 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 183 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\83f310676e36c778834d47614cd518b9.php 第 184 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-22T15:59:57+08:00 ] ::1 /storehouse/admin.php/Stock/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `config` WHERE ( code='web' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dictionary` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.0020s ]
+SQL: SELECT `ap_codes` FROM `admin_role` WHERE `ar_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `config` WHERE `code` = 'logLevel' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `page_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `page_log` (`aname`,`url`,`content`,`level`,`reference`,`controller`,`action`,`addtime`) VALUES ('admin','http://localhost/storehouse/admin.php/Stock/index1.html','查看入库列表','view','http://localhost/storehouse/admin.php/Main/left.html','Stock','index1','1534924797') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `stock_in` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `stock_in` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `stock_in` ORDER BY sti_id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keyword D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 140 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 171 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 181 行.
+NOTIC: [8] Undefined index: student_id D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 184 行.
+NOTIC: [8] Undefined index: name D:\phps\PHPTutorial\WWW\storehouse\Runtime\Admin\Cache\Admin\42559e7cb1d8b92dda57ef266bf27c99.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

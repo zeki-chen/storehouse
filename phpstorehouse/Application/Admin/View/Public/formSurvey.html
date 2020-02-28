@@ -1,0 +1,111 @@
+<style>
+    .div_addOption{
+        margin:5px 0 5px 0;
+    }
+    .div_addOption .delOptBtn{
+        background:rgba(234,32,32,0.7);
+        height:27px;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+<taglib name="Ycform" />
+<div class="     ">
+    <div class="formtitle ">
+        <span>调查详情</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <table class="formtable ">
+            <tbody>
+            <Ycform:input title="调查标题" name="title" need="*" datatype="*" tips="请填写调查标题" class="w200" value="{$model.title}"></Ycform:input>
+
+            <Ycform:input title="作者" name="author" tips="请填写作者（选填）" class="w500" value="{$model.author}"></Ycform:input>
+
+            <Ycform:textarea title="调查内容" name="description" need="*" datatype="*" tips="请调查内容" class="w500 h50" value="{$model.description}"></Ycform:textarea>
+            <tr>
+                <td class="ft_title">调查选项</td>
+                <td colspan="3">
+                    <foreach name="optList" item="vo">
+                        <div class="div_addOption">
+                            <input type="hidden" value="{$vo.so_id}" name="options[{$key}][so_id]"/>
+                            <input type="text" name="options[{$key}][content]" class="bds inp  w300" datatype="*" value="{$vo.content}" nullmsg="请填写选项内容" placeholder="请填写选项内容"/>
+                            <input type="button" value="删除选项" class="delOptBtn ajaxDelBtn"/>
+                        </div>
+                    </foreach>
+                    <input id="addOption" type="button" value="添加选项" class="btn button_primary btnsave"/>
+                </td>
+            </tr>
+            <Ycform:input title="开始时间" name="starttime" need="*" datatype="*" tips="请填写开始时间" class="w100 Wdate" value="{$model.starttime|date='Y-m-d',###}" onclick="WdatePicker()"></Ycform:input>
+
+            <Ycform:input title="结束时间" name="endtime" need="*" datatype="*" tips="请填写结束时间" class="w100 Wdate" value="{$model.endtime|date='Y-m-d',###}" onclick="WdatePicker()"></Ycform:input>
+
+            <Ycform:radio title="调查类型" name="type" value="{$model.type|default=0}" need="*" datatype="*" tips="请选择调查类型" options="survey_type"></Ycform:radio>
+
+            <Ycform:input title="发布时间" name="pubdate" need="*" datatype="*" tips="请填写发布时间" class="w100 Wdate" value="{$model.pubdate|date='Y-m-d',###}" onclick="WdatePicker()"></Ycform:input>
+
+            <Ycform:input title="排序" name="sort" need="*" datatype="n" tips="请填写排序" class="w200" value="{$model.sort|default=99}"></Ycform:input>
+
+            <Ycform:radio title="是否显示" name="is_show" value="{$model.is_show|default=1}" need="*" datatype="*" tips="请选择是否显示" options="yesno"></Ycform:radio>
+
+            <tr>
+                <td></td>
+                <td colspan="3">
+                    <input type="hidden" name="updatetime" value="{:time()}" />
+                    <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                    <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="h10"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#addOption').on('click',addOption);
+        $('.ajaxDelBtn').on('click',ajaxDel);
+    });
+
+    function addOption(){
+        var div=$("<div class=\"div_addOption\">\
+                <input type=\"text\" name=\"options[][content]\" class=\"bds inp  w300\" datatype=\"*\" nullmsg=\"请填写选项内容\" placeholder=\"请填写选项内容\"/>\
+            </div>");
+        var del=$("<input type=\"button\" value=\"删除选项\" class=\"delOptBtn\"/>");
+        del.on('click',delOption);
+        div.append(del);
+        div.append("<span class=\"Validform_checktip\"></span>");
+        $('#addOption').before(div);
+        div.children().eq(0).focus();
+    }
+
+    function delOption(){
+        $(this).parent().remove();
+    }
+
+    function ajaxDel(){
+        var div=$(this).parent();
+        var so_id=$(this).prev().prev().val();
+        var url="{:U('Survey/delOpt')}";
+        layer.confirm('删除后不可恢复，确定要删除吗？', {
+            btn: ['确定', '取消'] //按钮
+        }, function() {
+            loading("正在删除...");
+            $.post(url,{so_id:so_id},function(data){
+                if(data.status==1){
+                    div.remove();
+                    layer.closeAll();
+                }else{
+                    msgFaild(data.info);
+                }
+            },'json');
+        }, function() {
+            //取消时操作
+        });
+    }
+</script>
+

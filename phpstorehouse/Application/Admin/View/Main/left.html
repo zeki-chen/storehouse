@@ -1,0 +1,70 @@
+<include file="Main:left_public_top" />
+<taglib name="YcPower"/>
+
+<eq name="power" value="1">
+    <dd>
+        <div class="title">
+            <span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>仓库管理
+        </div>
+        <ul class="menuson">
+            <YcPower:cp power="StudentView"><li><cite></cite><a href="{:U('Warehouse/index')}" target="rightFrame">仓库列表</a></li></YcPower:cp>
+        </ul>
+    </dd>
+</eq>
+
+
+
+<YcPower:cp power="MemberView">
+	<dd>
+		<div class="title">
+			<span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>商品管理
+		</div>
+		<ul class="menuson">
+			<li><cite></cite><a href="{:U('Goods/index')}" target="rightFrame">商品列表</a><i></i></li>
+			<li><cite></cite><a href="{:U('Goods/index2')}" target="rightFrame">库存列表</a><i></i></li>
+		</ul>
+	</dd>
+</YcPower:cp>
+<YcPower:cp power="MemberView">
+	<dd>
+		<div class="title">
+			<span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>经销商管理
+		</div>
+		<ul class="menuson">
+			<li><cite></cite><a href="{:U('Manufacturer/index')}" target="rightFrame">经销商列表</a><i></i></li>
+		</ul>
+	</dd>
+</YcPower:cp>
+<YcPower:cp power="MemberView">
+	<dd>
+		<div class="title">
+			<span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>出入库管理
+		</div>
+		<ul class="menuson">
+			<li><cite></cite><a href="{:U('Stock/index_in')}" target="rightFrame">入库列表</a><i></i></li>
+			<li><cite></cite><a href="{:U('Stock/index_out')}" target="rightFrame">出库列表</a><i></i></li>
+		</ul>
+	</dd>
+</YcPower:cp>
+<YcPower:cp power="MemberView">
+	<dd>
+		<div class="title">
+			<span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>仓库安全管理
+		</div>
+		<ul class="menuson">
+			<li><cite></cite><a href="{:U('jiedian/index1')}" target="rightFrame">节点1列表</a><i></i></li>
+			<li><cite></cite><a href="{:U('jiedian/index2')}" target="rightFrame">节点2列表</a><i></i></li>
+			<li><cite></cite><a href="{:U('jiedian/index3')}" target="rightFrame">节点3列表</a><i></i></li>
+		</ul>
+	</dd>
+</YcPower:cp>
+<YcPower:cp power="MemberView">
+	<dd>
+		<div class="title">
+			<span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>操作员管理
+		</div>
+		<ul class="menuson">
+			<li><cite></cite><a href="{:U('User/index')}" target="rightFrame">操作员列表</a><i></i></li>
+		</ul>
+	</dd>
+</YcPower:cp>

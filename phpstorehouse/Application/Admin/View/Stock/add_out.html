@@ -1,0 +1,134 @@
+<include file="Public:doctype"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <include file="Public:basicHead"/>
+</head>
+<body>
+<include file="Public:bread"/>
+<div class="p10">
+    <form class="mainform" role="form" method="post" action="{:U('Stock/doAdd_out')}">
+        <input type="hidden" name="n" id="n" value=""/>
+        <taglib name="Ycform"/>
+        <div class="     ">
+            <div class="formtitle ">
+                <span>订单信息</span>
+                <div class="slideup slideup_sub" tabid="tabid1"></div>
+            </div>
+            <div class="tab mt10" id="tabid1">
+                <table class="formtable ">
+                    <tbody>
+
+                    <tr>
+                        <td class="ft_title">仓库</td>
+                        <td><select name="wa_id">
+                            <foreach name="warehouse" item="vo">
+                                <if condition="$model.wa_id eq $vo['wa_id']">
+                                    <option value="{$vo.wa_id}" selected="selected">{$vo.wa_name}</option>
+                                    <else/>
+                                    <option value="{$vo.wa_id}">{$vo.wa_name}</option>
+                                </if>
+                            </foreach>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td class="ft_title">操作员</td>
+                        <td><select name="us_id">
+                            <foreach name="user" item="vo">
+                                <if condition="$model.us_id eq $vo['us_id']">
+                                    <option value="{$vo.us_id}" selected="selected">{$vo.us_name}</option>
+                                    <else/>
+                                    <option value="{$vo.us_id}">{$vo.us_name}</option>
+                                </if>
+                            </foreach>
+                        </select></td>
+                    </tr>
+
+                    <Ycform:input title="货单总价" name="sto_worth" need="*" datatype="zs" tips="请填写货单总价" class="w100"
+                                  value="{$model.sti_worth}" maxlength="10"></Ycform:input>
+
+                    <Ycform:input title="出库时间" name="sto_time" need="*" datatype="*" tips="请填写入库时间" class="w100 Wdate"
+                                  value="{$model.sti_time}" onclick="WdatePicker()"></Ycform:input>
+                    <Ycform:textarea title="备注" name="sto_remarks" tips="请填写备注" class="w400 h80"
+                                     value="{$model['sto_remarks']}"></Ycform:textarea>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="formtitle ">
+                <span>订单商品信息</span>
+                <div class="slideup slideup_sub" tabid="tabid1"></div>
+            </div>
+            <div>
+                <a>
+                    <span onclick="getData()"><img src="__PUBLIC__/Admin/images/t01.png"/></span>添加</a>
+                <a>
+                    <span onclick="getData2()"><img src="__PUBLIC__/Admin/images/t03.png"/></span>清空</a>
+            </div>
+
+
+            <div class="tab mt10" id="tabid1">
+                <table class="formtable ">
+                    <tbody>
+                    <tbody class="formtable ">
+                    <Ycform:input title="商品编号" name="go_id1" datatype="*" tips="商品编号" class="w100" value=""
+                                  maxlength="20"></Ycform:input>
+                    <Ycform:input title="商品数量" name="sto_num1" datatype="*" tips="请填写商品数量" class="w100" value=""
+                                  maxlength="20"></Ycform:input>
+                    </tbody>
+                    <tbody class="formtable " id=add>
+
+                    </tbody>
+
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+
+                            <input type="hidden" name="updatetime" value="{:time()}"/>
+                            <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                            <input type="button" value="返回" class="btn button_success btnsave"
+                                   onclick="javascript:history.go(-1)"/>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="h10"></div>
+        </div>
+
+    </form>
+    <!--导入validform-->
+    <include file="Public:validformScript"/>
+</div>
+</body>
+<script type="text/javascript">
+    var n = 2;
+    $("#n").append().val(1);
+
+    function getData() {
+        $ht =
+            '<Ycform:input  title="商品编号" name="go_id' + n + '" tips="商品编号" class="w100"  datatype="*" value="{$vo.go_id}" maxlength="20"></Ycform:input> ' +
+            ' <Ycform:input  title="商品数量" name="sto_num' + n + '" tips="请填写商品数量" class="w100" value="{$vo.sti_num}" maxlength="20"></Ycform:input>'
+        $("#add").append($ht);
+        $("#n").append().val(n);
+        n = n + 1;
+
+    }
+
+    function getData2() {
+
+        $("#add").empty();
+        n = 2;
+        $("#n").append().val(n);
+
+    }
+
+</script>
+
+
+</html>
+

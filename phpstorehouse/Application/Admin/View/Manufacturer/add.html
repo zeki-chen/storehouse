@@ -1,0 +1,54 @@
+<include file="Public:doctype"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <include file="Public:basicHead"/>
+</head>
+<body>
+<include file="Public:bread"/>
+<div class="p10">
+    <form class="mainform" role="form" method="post" action="{:U('Manufacturer/doAdd')}">
+        <taglib name="Ycform"/>
+        <div class="     ">
+            <div class="formtitle ">
+                <span>经销商信息</span>
+                <div class="slideup slideup_sub" tabid="tabid1"></div>
+            </div>
+            <div class="tab mt10" id="tabid1">
+                <table class="formtable ">
+                    <tbody>
+
+
+                    <Ycform:input title="经销商名" name="ma_name" need="*" datatype="*" tips="请填写经销商名" class="w100"
+                                  value="{$model.ma_name}" maxlength="10"></Ycform:input>
+                    <Ycform:input title="经销商地址" name="ma_address" need="*" datatype="*" tips="请填写经销商地址" class="w100"
+                                  value="{$model.ma_address}" maxlength="30"></Ycform:input>
+                    <Ycform:input title="经销商电话" name="ma_phone" need="*" datatype="*" tips="请填写经销商电话" class="w100"
+                                  value="{$model.ma_phone}" maxlength="20"></Ycform:input>
+
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+
+                            <input type="hidden" name="updatetime" value="{:time()}"/>
+                            <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                            <input type="button" value="返回" class="btn button_success btnsave"
+                                   onclick="javascript:history.go(-1)"/>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="h10"></div>
+        </div>
+
+    </form>
+    <!--导入validform-->
+    <include file="Public:validformScript"/>
+</div>
+</body>
+</html>
+
+
+

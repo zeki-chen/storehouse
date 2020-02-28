@@ -1,0 +1,60 @@
+.minute{
+    .details_box{
+        float:left;
+        width:693px;
+        margin-top: 31px;
+        .essay{
+            width:674px;
+            margin:0 auto;
+            color:#333333;
+            .title{
+                margin-top: 17px;
+                padding:11px 21px;
+                font-size: 24px;
+                text-align: center;
+            }
+            .info{
+                font-size: 14px;
+                padding-top: 7px;
+                text-align: center;
+                .item{
+                    padding:0 10px;
+                    text-align: center;
+                }
+            }
+            .content{
+                font-size: 14px;
+                width:666px;
+                margin:0 auto;
+                text-align: justify;
+                padding-top: 20px;
+                line-height: 1.8;
+                p{
+                      img{
+                        max-width:640px  !important;
+                        margin:12px auto !important;
+                    }
+                }
+            }
+            .attachment{
+                font-size: 14px;
+                padding:20px 0 40px 0;
+                .attachment_name{
+                    color:#dc5548;
+                }
+                .attachment_content{
+                    margin-left:28px;
+                    a{
+                        color:#008ac9;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#map{
+    width:600px;
+    height: 300px;
+    margin:30px auto;
+}

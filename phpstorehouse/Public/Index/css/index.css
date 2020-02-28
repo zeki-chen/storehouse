@@ -1,0 +1,50 @@
+.topic_box { height: 326px; padding: 16px 0; }
+.topic_box .notice { float: left; width: 350px; margin-left: 13px; position: relative; }
+.topic_box .notice .tabs .tabs_header li { float: left; }
+.topic_box .notice .tabs .tabs_header li a { font-size: 18px; color: #333333; }
+.topic_box .notice .tabs .tabs_header li .slash { display: inline; vertical-align: bottom; }
+.topic_box .notice .tabs .tabs_header li .selected { color: #D32F2F; }
+.topic_box .notice .tabs .tab_box .tab_content { width: 100%; border-top: 2px solid #b9b9b9; }
+.topic_box .notice .tabs .tab_box .tab_content .more { position: absolute; top: 6px; right: 6px; font-size: 12px; color: #999999; }
+.topic_box .notice .tabs .tab_box .tab_content ul { margin-top: 17px; *margin-top: 23px; }
+.topic_box .notice .tabs .tab_box .tab_content ul li { background: url("../img/right_arrow.png") no-repeat left; font-size: 14px; text-indent: 20px; height: 26px; line-height: 26px; *height: 22px; *line-height: 22px; }
+.topic_box .notice .tabs .tab_box .tab_content ul li a { display: block; color: #333333; }
+.topic_box .notice .tabs .tab_box .tab_content ul li a:hover { color: #D32F2F; }
+.topic_box .notice .tabs .tab_box .tab_content ul li a:hover .date { color: #D32F2F; }
+.topic_box .notice .tabs .tab_box .tab_content ul li .title { float: left; max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topic_box .notice .tabs .tab_box .tab_content ul li .date { float: right; font-size: 12px; color: #b7b7b7; }
+.topic_box .special { float: right; width: 296px; margin-left: 11px; }
+.topic_box .special .title { width: 296px; height: 31px; line-height: 31px; background: url("../img/special_bg.png") no-repeat center; font-size: 18px; color: #f7f7f7; text-indent: 23px; }
+.topic_box .special .subject .item { margin-top: 17px; }
+.topic_box .special .subject .item:first-child { margin-top: 13px; }
+
+.publicity img { width: 1000px; height: 125px; }
+
+.essay_box .essay_block { float: left; margin-top: 17px; margin-left: 22px; width: 318px; }
+.essay_box .essay_block:first-child { margin-left: 0; }
+.essay_box .essay_block .class { position: relative; height: 40px; line-height: 40px; border-bottom: 1px solid #aab4b7; }
+.essay_box .essay_block .class .class_icon { display: inline; width: 36px; height: 36px; }
+.essay_box .essay_block .class .class_name { position: absolute; top: 2px; left: 52px; font-size: 18px; color: #333333; }
+.essay_box .essay_block .class .more { position: absolute; right: 9px; top: 6px; font-size: 12px; color: #666666; }
+.essay_box .essay_block .content { padding: 14px 0; }
+.essay_box .essay_block .content ul li { height: 22px; line-height: 22px; font-size: 14px; padding: 2px 0; background: url("../img/li_bg.png") no-repeat left; background-size: 4px; text-indent: 10px; }
+.essay_box .essay_block .content ul li:first-child { padding-top: 0; }
+.essay_box .essay_block .content ul li a { color: #666666; }
+.essay_box .essay_block .content ul li a:hover { color: #D32F2F; }
+.essay_box .essay_block .content ul li .title { float: left; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.essay_box .essay_block .content ul li .date { float: right; font-size: 12px; margin-right: 2px; }
+
+.campus_culture { padding: 25px 0; }
+.campus_culture .caption { position: relative; margin: 0 auto; width: 830px; }
+.campus_culture .caption img { display: inline; vertical-align: middle; }
+.campus_culture .caption .caption_name { position: absolute; top: 7px; left: 375px; text-align: center; font-size: 18px; color: #f7f7f7; }
+.campus_culture .caption .caption_name a { color: #f7f7f7; }
+.campus_culture .content { margin-top: 21px; overflow: hidden; }
+.campus_culture .content ul .item { float: left; position: relative; width: 181px; font-size: 14px; padding-left: 22px; }
+.campus_culture .content ul .item a { color: #333333; border-bottom: 1px solid #d6d6d6; }
+.campus_culture .content ul .item a:hover { color: #D32F2F; border-bottom: 1px solid #D32F2F; }
+.campus_culture .content ul .item img { width: 181px; height: 220px; }
+.campus_culture .content ul .item .title { padding: 6px 0; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.campus_culture .content ul .item .right_arrow { position: absolute; right: 3px; top: 226px; }
+
+/*# sourceMappingURL=index.css.map */

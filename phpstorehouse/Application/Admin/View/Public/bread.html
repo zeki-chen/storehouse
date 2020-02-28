@@ -1,0 +1,17 @@
+<div class="place" style="position: relative;">
+	<span>位置：</span>
+	<ul class="placeul">
+		<foreach name="bread" item="vo">
+			<li>
+				<empty name="vo['url']">
+					{$vo.name}
+					<else/>
+					<a href="{$vo.url}">{$vo.name}</a>
+				</empty>
+			</li>
+		</foreach>
+
+	</ul>
+
+	<a href="javascript:history.go(-1)" class="goback">返回</a>
+</div>

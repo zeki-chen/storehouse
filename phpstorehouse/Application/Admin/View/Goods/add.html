@@ -1,0 +1,74 @@
+<include file="Public:doctype"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <include file="Public:basicHead"/>
+</head>
+<body>
+<include file="Public:bread"/>
+<div class="p10">
+    <form class="mainform" role="form" method="post" action="{:U('Goods/doadd')}">
+        <input type="hidden" name="go_id" value="{$model.go_id}"/>
+        <taglib name="Ycform"/>
+        <div class="     ">
+            <div class="formtitle ">
+                <span>商品信息</span>
+                <div class="slideup slideup_sub" tabid="tabid1"></div>
+            </div>
+            <div class="tab mt10" id="tabid1">
+                <table class="formtable ">
+                    <tbody>
+                    <Ycform:input title="商品中文名" name="go_name" need="*" datatype="*" tips="请填写商品中文名" class="w100"
+                                  value="{$model.go_name}" maxlength="6"></Ycform:input>
+                    <Ycform:input title="商品英文名" name="go_engname" need="*" datatype="*" tips="请填写商品英文名" class="w100"
+                                  value="{$model.go_engname}" maxlength="6"></Ycform:input>
+                    <Ycform:input title="商品规格" name="go_size" need="*" datatype="*" tips="请填写商品规格,如：瓶，个" class="w100"
+                                  value="{$model.go_size}" maxlength="6"></Ycform:input>
+                    <Ycform:input title="商品单价" name="go_price" need="*" datatype="*" tips="商品单价，单位：元" class="w100"
+                                  value="{$model.go_price}" maxlength="6"></Ycform:input>
+                    <tr>
+                        <td class="ft_title">经销商</td>
+                        <td><select name="ma_id">
+                            <foreach name="manufacturer" item="vo">
+                                <if condition="$model.ma_id eq $vo['ma_id']">
+                                    <option value="{$vo.ma_id}" selected="selected">{$vo.ma_name}</option>
+                                    <else/>
+                                    <option value="{$vo.ma_id}">{$vo.ma_name}</option>
+                                </if>
+                            </foreach>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td class="ft_title">图片</td>
+                        <td>
+                            <Ycform:webuploadPic id="pic" addbtn="picbtn" name="go_picture" sumsize="2" singlesize="2"
+                                                 count="1" datatype="null" value="{$model['go_picture']}" tips="请上传照片"
+                                                 compress="0" tip="" cut="100,100,filled"></Ycform:webuploadPic>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+
+                            <input type="hidden" name="updatetime" value="{:time()}"/>
+                            <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                            <input type="button" value="返回" class="btn button_success btnsave"
+                                   onclick="javascript:history.go(-1)"/>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="h10"></div>
+        </div>
+
+    </form>
+    <!--导入validform-->
+    <include file="Public:validformScript"/>
+</div>
+</body>
+</html>
+

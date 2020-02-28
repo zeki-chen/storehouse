@@ -1,0 +1,36 @@
+<taglib name="Ycform" />
+<div class="     ">
+    <div class="formtitle ">
+        <span>友情链接分类信息</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <table class="formtable ">
+            <tbody>
+            <Ycform:input title="分类名称" name="class_name" need="*" datatype="*" tips="请填写分类名称" class="w200" value="{$model.class_name}"></Ycform:input>
+
+            <Ycform:input title="跳转链接" name="link_url" tips="请填写跳转链接(选填)" class="w500" value="{$model.link_url}"></Ycform:input>
+
+            <Ycform:textarea title="摘要" name="description" tips="请填写摘要(选填)" class="w500 h50" value="{$model.description}"></Ycform:textarea>
+
+            <Ycform:input title="排序" name="sort" need="*" datatype="*" tips="请填写排序" class="w200" value="{$model.sort|default=99}"></Ycform:input>
+
+            <Ycform:radio title="是否有效" name="valid" value="{$model.valid|default=1}" need="*" datatype="*" tips="请选择是否有效" options="yesno"></Ycform:radio>
+
+            <tr>
+                <td></td>
+                <td colspan="3">
+
+                    <input type="hidden" name="updatetime" value="{:time()}" />
+                    <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                    <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="h10"></div>
+</div>
+

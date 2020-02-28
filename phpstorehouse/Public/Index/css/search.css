@@ -1,0 +1,12 @@
+.minute .list_box { width: 990px; margin: 0 auto; color: #333333; }
+.minute .list_box .keyword { background: url(../img/search_icon.png) no-repeat left; background-size: 27px; background-position-x: 17px; border-bottom: 1px solid #BEBDBD; text-indent: 50px; height: 37px; font-size: 14px; position: relative; vertical-align: bottom; margin-top: 27px; }
+.minute .list_box .keyword .tip { position: absolute; top: 13px; left: 8p; }
+.minute .list_box .keyword .tip .red { font-size: 15px; color: #bc2121; }
+.minute .search_list ul { margin-top: 12px; }
+.minute .search_list ul li { margin-left: 31px; height: 34px; line-height: 34px; font-size: 15px; padding: 2px 0; background: url("../img/list_arrow.png") no-repeat left; background-size: 12px; text-indent: 23px; }
+.minute .search_list ul li a { color: #333333; }
+.minute .search_list ul li a:hover { color: #D32F2F; }
+.minute .search_list ul li .title { float: left; max-width: 520px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.minute .search_list ul li .date { float: right; font-size: 12px; color: #555555; margin-right: 2px; }
+
+/*# sourceMappingURL=search.css.map */

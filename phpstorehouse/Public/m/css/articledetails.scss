@@ -1,0 +1,53 @@
+
+.artde_con{
+	padding: 0.4rem 0.12rem;
+	box-sizing: border-box;
+	.con_title{
+		font-size: 0.15rem;
+		color: #000;
+		font-weight: 500;
+		text-align: center;
+	}
+	.con_label{
+		text-align: center;
+		font-size: 0.09rem;
+		color: #333;
+		margin-top: 0.1rem;
+		margin-bottom: 0.15rem;
+	}
+	.con_content{
+		font-size: 0.1rem;
+		color: #333;
+		p{
+			line-height: 0.16rem !important;
+			font-size: 0.1rem !important;
+			text-align: justify;
+		}
+		img{
+			max-width: 100% !important;
+			margin: 0.04rem 0 !important;
+		}
+	}
+	.download_link{
+		margin-top: 0.12rem;
+		a{
+			text-decoration: underline;
+		}
+		img{
+		    float: left;
+            margin: 0.01rem;
+            margin-top: -0.01rem;
+			width: 0.12rem;
+			height: 0.12rem;
+		}
+	}
+	.video_box{
+		width: 100%;
+		height: 1.5rem;
+		margin: 0.16rem 0;
+		.video1{
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

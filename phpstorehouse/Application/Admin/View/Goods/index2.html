@@ -1,0 +1,66 @@
+<include file="Public:doctype"/>
+<taglib name="YcPower"/>
+<head>
+    <include file="Public:basicHead"/>
+</head>
+
+<body>
+
+<include file="Public:bread"/>
+
+<div class="rightinfo">
+
+    <div class="tools">
+
+        <form action="{:U('Goods/index')}" method="get">
+            <ul class="toolbar1">
+                <li>关键词：
+                    <input type="text" name="keyword" class="scinput" placeholder="请输入关键词" value="{$keyword}"/>
+                </li>
+                <li>
+                    <input type="submit" class="scbtn button_primary" value="查询"/>
+                </li>
+
+            </ul>
+        </form>
+
+    </div>
+
+    <table class="tablelist">
+        <thead>
+        <tr>
+            <th class="tl" width="100">商品编号</th>
+            <th width="150">商品名称</th>
+            <th width="100">仓库名称</th>
+            <th width="100">商品数量</th>
+            <th width="200">单价</th>
+            <th width="150">经销商</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="item" key="k">
+            <tr>
+                <td class="tl">{$item.go_id}</td>
+                <td>{$item.go_name}</td>
+                <td>{$item.wa_name|default='未填写'}</td>
+
+                <td>{$item.go_num|default='未填写'}</td>
+                <td>{$item.go_price|default='未填写'}</td>
+                <td>{$item.ma_name}</td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+
+    <div class="pagin">
+        {$pages}
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+</body>
+
+</html>

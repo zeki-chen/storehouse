@@ -1,0 +1,65 @@
+<include file="Public:doctype"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <include file="Public:basicHead"/>
+</head>
+<body>
+<include file="Public:bread"/>
+<div class="p10">
+    <form class="mainform" role="form" method="post" action="{:U('User/doAdd')}">
+        <input type="hidden" name="addtime" value="{:time()}"/>
+        <taglib name="Ycform"/>
+        <div class="     ">
+            <div class="formtitle ">
+                <span>操作员账户信息</span>
+                <div class="slideup slideup_sub" tabid="tabid1"></div>
+            </div>
+            <div class="tab mt10" id="tabid1">
+                <table class="formtable ">
+                    <tbody>
+
+                    <Ycform:input title="操作员名称" name="us_name" need="*" datatype="checkName,*" tips="请填写操作员名称"
+                                  class="w200" errormsg="该用户名已被占用" value="{$model.aname}"></Ycform:input>
+
+                    <Ycform:password title="密码" name="us_password" need="*" datatype="*6-18" tips="请填写密码" class="w200"
+                                     value="{$model.pwd}"></Ycform:password>
+
+                    <Ycform:password title="确认密码" name="" need="*" datatype="*6-18" tips="请填写确认密码" class="w200"
+                                     value="{$model.pwd}" recheck="us_password"></Ycform:password>
+
+
+                    <Ycform:input title="地址" name="us_address" tips="请填写地址(选填)" class="w200"
+                                  value="{$model.realname}"></Ycform:input>
+
+                    <Ycform:input title="手机号码" name="us_phone" ignore="ignore" datatype="m" tips="请填写手机号码(选填)"
+                                  errormsg="请填写正确的手机号码" class="w200" value="{$model.tel}"></Ycform:input>
+
+                    <tr>
+                        <td class="ft_title">用户状态</td>
+                        <td colspan="3">
+                            <input type="radio" name="us_status" value="1" checked>有效
+                            <input type="radio" name="us_status" value="0">无效
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+                            <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                            <input type="button" value="返回" class="btn button_success btnsave"
+                                   onclick="javascript:history.go(-1)"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="h10"></div>
+        </div>
+
+
+    </form>
+    <!--导入validform-->
+    <include file="Public:validformScript"/>
+</div>
+</body>
+</html>
+

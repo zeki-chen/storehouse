@@ -1,0 +1,18 @@
+<include file="Public:doctype" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<include file="Public:basicHead" />
+	</head>
+	<body>
+		<include file="Public:bread" />
+		<div class="p10">
+			<form class="mainform" role="form" method="post" action="{:U('AdminRole/doAdd')}">
+				<input type="hidden" name="addtime" value="{:time()}" />
+				<include file="Public:formAdminRole" />
+			</form>
+			<!--导入validform-->
+			<include file="Public:validformScript" />
+		</div>
+	</body>
+</html>
+

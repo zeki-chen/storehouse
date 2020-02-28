@@ -1,0 +1,131 @@
+<style type="text/css">
+    .fieldTable{
+        width:100%;
+    }
+    .fieldTable .tl{
+        width: 100px;
+    }
+    .fieldTable .selectAll{
+        background: #3280fc;
+        height: 27px;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        width: 80px;
+        text-align: center;
+    }
+</style>
+<taglib name="Ycform" />
+<div class="     ">
+    <div class="formtitle ">
+        <span>模型配置信息</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <table class="formtable ">
+            <tbody>
+            <Ycform:input title="模型名称" name="model_name" need="*" datatype="*" tips="请填写模型名称" class="w200" value="{$config.model_name}"></Ycform:input>
+
+            <Ycform:radio title="开启分类" name="art_class" value="{$config.art_class|default=1}" need="*" datatype="*" tips="开启分类功能后可创建分类" options="yesno"></Ycform:radio>
+
+            <Ycform:radio title="开启子分类" name="sub_class" value="{$config.sub_class|default=0}" need="*" datatype="*" tips="开启子分类功能后可创建子分类" options="yesno"></Ycform:radio>
+
+            <Ycform:radio title="开启审核" name="check" value="{$config.check|default=0}" need="*" datatype="*" tips="请选择是否启用审核功能" options="yesno"></Ycform:radio>
+
+            <Ycform:radio title="导航可用" name="is_nav" value="{$config.is_nav|default=1}" need="*" datatype="*" tips="导航不可用时，该模型在导航配置里不会出现" options="yesno"></Ycform:radio>
+
+            <Ycform:radio title="快速通道可用" name="is_fast" value="{$config.is_fast|default=1}" need="*" datatype="*" tips="快速通道不可用时，该模型在快速通道不会出现" options="yesno"></Ycform:radio>
+
+            <Ycform:input title="导航action" name="action" tips="请填写导航action" class="w200" value="{$config.action}"></Ycform:input>
+
+            <tr>
+                <td class="ft_title">选择字段</td>
+                <td colspan="3">
+                    <table class="fieldTable">
+                        <tbody>
+                        <tr>
+                            <td class="tl"><input type="button" class="selectAll btn" value="全选"/></td>
+                            <td class="w100">是否必填</td>
+                            <td colspan="2">排序</td>
+                        </tr>
+                        <foreach name="fieldList" item="item">
+                            <tr>
+                                <td>
+                                    <label class="radio-inline"><input name="field[{$item.code}]" value="{$item.fid}" type="checkbox" <in name="item['fid']" value="$field">checked</in>/>{$item.field_name}</label>
+                                </td>
+                                <td>
+                                    <label class="radio-inline"><input name="null[{$item.code}]" value="1" type="radio" disabled <eq name="null[$item['code']]|default=1" value="1">checked</eq>/>是</label>
+                                    <label class="radio-inline"><input name="null[{$item.code}]" value="0" type="radio" disabled <eq name="null[$item['code']]" value="0">checked</eq>/>否</label>
+                                </td>
+                                <td>
+                                    <input class="bds inp  w40" type="text" disabled name="f_sort[{$item.code}]" value="{$f_sort[$item['code']]|default=99}" maxlength="2">
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <Ycform:input title="排序" name="sort" need="*" datatype="*" tips="请填写排序" class="w200" value="{$config.sort|default=99}"></Ycform:input>
+
+            <Ycform:radio title="是否有效" name="valid" value="{$config.valid|default=1}" need="*" datatype="*" tips="请选择是否有效" options="yesno"></Ycform:radio>
+
+            <tr>
+                <td></td>
+                <td colspan="3">
+                    <input type="hidden" name="updatetime" value="{:time()}" />
+                    <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                    <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="h10"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var checkList=$('.fieldTable input[type=checkbox]');
+        checkList.each(function(){
+            if($(this).attr('checked')){
+                $(this).parent().parent().parent().find('input').removeAttr('disabled');
+            }
+        });
+        $('.selectAll').on('click',selectAll);
+        checkList.change(chbChange);
+        // $("input[name='album']").change(picChange);
+        // $("input[name='attachment']").change(fileChange);
+    });
+
+    //选中字段时，设置是否必填选项可用
+    function chbChange(){
+        var radio=$(this).parent().parent().parent().find('input');
+        if($(this).attr('checked')){
+            radio.removeAttr('disabled');
+        }else{
+            radio.attr('disabled','true');
+            $(this).removeAttr('disabled');
+        }
+    }
+
+    //全选
+    function selectAll(){
+        var value=$(this).val();
+        if(value=="全选"){
+            $('.fieldTable input[type=checkbox]').attr('checked','true');
+            $('.fieldTable input').removeAttr('disabled');
+            $(this).val("全不选");
+        }else{
+            $('.fieldTable input[type=checkbox]').removeAttr('checked');
+            $('.fieldTable input').attr('disabled','true');
+            $('.fieldTable input[type=checkbox]').removeAttr('disabled');
+            $(this).removeAttr('disabled');
+            $(this).val('全选');
+        }
+    }
+</script>

@@ -1,0 +1,236 @@
+
+.topic_box {
+    height: 326px;
+    padding: 16px 0;
+    .notice {
+        float: left;
+        width: 350px;
+        margin-left: 13px;
+        position: relative;
+        .tabs {
+            .tabs_header {
+                li {
+                    float: left;
+                    a {
+                        font-size: 18px;
+                        color: #333333;
+                    }
+                    .slash {
+                        display: inline;
+                        vertical-align: bottom;
+                    }
+                    .selected {
+                        color: #D32F2F;
+                    }
+                }
+            }
+            .tab_box {
+                .tab_content {
+                    width: 100%;
+                    border-top: 2px solid #b9b9b9;
+                    .more {
+                        position: absolute;
+                        top: 6px;
+                        right: 6px;
+                        font-size: 12px;
+                        color: #999999;
+                    }
+                    ul {
+                        margin-top: 17px;
+                        *margin-top: 23px;
+                        li {
+                            background: url("../img/right_arrow.png") no-repeat left;
+                            font-size: 14px;
+                            text-indent: 20px;
+                            height: 26px;
+                            line-height: 26px;
+                            *height: 22px;
+                            *line-height: 22px;
+                            a {
+                                display: block;
+                                color: #333333;
+                                &:hover {
+                                    color: #D32F2F;
+                                    .date {
+                                        color: #D32F2F;
+                                    }
+                                }
+                            }
+                            .title {
+                                float: left;
+                                max-width: 260px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .date {
+                                float: right;
+                                font-size: 12px;
+                                color: #b7b7b7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .special {
+        float: right;
+        width: 296px;
+        margin-left: 11px;
+        .title {
+            width: 296px;
+            height: 31px;
+            line-height: 31px;
+            background: url("../img/special_bg.png") no-repeat center;
+            font-size: 18px;
+            color: #f7f7f7;
+            text-indent: 23px;
+        }
+        .subject {
+            .item {
+                margin-top: 17px;
+                &:first-child {
+                    margin-top: 13px;
+                }
+            }
+        }
+    }
+}
+.publicity {
+    img {
+        width: 1000px;
+        height: 125px;
+    }
+}
+.essay_box {
+    .essay_block {
+        float: left;
+        margin-top: 17px;
+        margin-left: 22px;
+        width: 318px;
+        &:first-child {
+            margin-left: 0;
+        }
+        .class {
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #aab4b7;
+            .class_icon {
+                display: inline;
+                width: 36px;
+                height: 36px;
+            }
+            .class_name {
+                position: absolute;
+                top: 2px;
+                left: 52px;
+                font-size: 18px;
+                color: #333333;
+            }
+            .more {
+                position: absolute;
+                right: 9px;
+                top: 6px;
+                font-size: 12px;
+                color: #666666;
+            }
+        }
+        .content {
+            padding: 14px 0;
+            ul {
+                li {
+                    height: 22px;
+                    line-height: 22px;
+                    font-size: 14px;
+                    padding: 2px 0;
+                    background: url("../img/li_bg.png") no-repeat left;
+                    background-size: 4px;
+                    text-indent: 10px;
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                    a {
+                        color: #666666;
+                        &:hover {
+                            color: #D32F2F;
+                        }
+                    }
+                    .title {
+                        float: left;
+                        max-width: 220px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .date {
+                        float: right;
+                        font-size: 12px;
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+.campus_culture {
+    padding: 25px 0;
+    .caption {
+        position: relative;
+        margin: 0 auto;
+        width: 830px;
+        img {
+            display: inline;
+            vertical-align: middle;
+        }
+        .caption_name {
+            position: absolute;
+            top: 7px;
+            left: 375px;
+            text-align: center;
+            font-size: 18px;
+            color: #f7f7f7;
+            a{
+                color: #f7f7f7;
+            }
+        }
+    }
+    .content {
+        margin-top: 21px;
+        overflow: hidden;
+        ul {
+            .item {
+                float: left;
+                position: relative;
+                width: 181px;
+                font-size: 14px;
+                padding-left: 22px;
+                a {
+                    color: #333333;
+                    border-bottom: 1px solid #d6d6d6;
+                    &:hover {
+                        color: #D32F2F;
+                        border-bottom: 1px solid #D32F2F;
+                    }
+                }
+                img {
+                    width: 181px;
+                    height: 220px;
+                }
+                .title {
+                    padding: 6px 0;
+                    max-width: 160px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .right_arrow {
+                    position: absolute;
+                    right: 3px;
+                    top: 226px;
+                }
+            }
+        }
+    }
+}

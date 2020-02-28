@@ -1,0 +1,18 @@
+
+
+		</dl>
+
+	</body>
+<script type="text/javascript">
+	$(function(){
+		var li=$('.menuson li').first();
+		li.addClass('active');
+		var href=li.find('a').attr('href');
+		if(typeof(href)!='undefined'){
+			// console.log(href);
+			parent.rightFrame.location.href=href;
+		}
+		
+	})
+</script>
+</html>

@@ -1,0 +1,55 @@
+<taglib name="Ycform" />
+<div class="     ">
+	<!--<div class="cmp_tltle">{$title}</div>-->
+
+	<div class="formtitle ">
+		<span>权限代码信息</span>
+		<!--<div class="slideup">+</div>-->
+		<div class="slideup slideup_sub" tabid="tabid1"></div>
+	</div>
+	<div class="tab mt10" id="tabid1">
+		<table class="formtable ">
+			<tbody>
+				
+				<eq name="Think.ACTION_NAME" value="add">
+					<Ycform:input title="权限代码" name="ap_code" need="*" datatype="*" tips="请填写权限代码" class="w200" value="{$model.ap_code}"></Ycform:input>
+					<else/>
+					<tr>
+						<td class="ft_title">权限代码</td>
+						<td>
+							{$model.ap_code}
+							<input type="hidden" name="ap_code" value="{$model.ap_code}" />
+						</td>
+					</tr>
+					
+				</eq>
+				
+					
+					
+				<Ycform:input title="权限名称" name="ap_name" need="*" datatype="*" tips="请填写权限名称" class="w200" value="{$model.ap_name}"></Ycform:input>
+
+				<Ycform:input title="权限分组" name="ap_group" need="*" datatype="*" tips="请填写权限分组" class="w200" value="{$model.ap_group}"></Ycform:input>
+
+				<Ycform:input title="模块名称" name="ap_model" need="*" datatype="*" tips="请填写模块名称" class="w200" value="{$model.ap_model}"></Ycform:input>
+				
+				<Ycform:radio title="是否有效" name="valid" value="{$model.valid|default=1}" need="*" datatype="*" tips="请选择是否有效" options="yesno"></Ycform:radio>
+
+			
+
+				<tr>
+					<td></td>
+					<td colspan="3">
+						
+						<input type="hidden" name="updatetime" value="{:time()}" />
+						<input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+						<input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
+	<div class="h10"></div>
+</div>
+

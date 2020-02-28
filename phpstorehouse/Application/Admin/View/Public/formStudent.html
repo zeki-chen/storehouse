@@ -1,0 +1,60 @@
+<taglib name="Ycform" />
+<div class="     ">
+    <div class="formtitle ">
+        <span>商品信息</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <table class="formtable ">
+            <tbody>
+            <Ycform:input title="学号" name="student_number" need="*" datatype="nz" tips="请填写学号" errormsg="请填写正确的学号" class="w100" value="{$model.student_number}" maxlength="11"></Ycform:input>
+
+            <Ycform:input title="学生姓名" name="name" need="*" datatype="*" tips="请填写学生姓名" class="w100" value="{$model.name}" maxlength="6"></Ycform:input>
+
+            <tr>
+                <td class="ft_title">图片</td>
+                <td>
+                    <Ycform:webuploadPic id="pic" addbtn="picbtn" name="pic" sumsize="2" singlesize="2" count="1" datatype="null" value="{$model['pic']}" tips="请上传个人照片" compress="0" tip="" cut="100,100,filled"></Ycform:webuploadPic>
+                </td>
+            </tr>
+
+            <Ycform:input title="专业" name="specialty" tips="请填写专业" class="w100" value="{$model.specialty}" maxlength="20"></Ycform:input>
+
+            <Ycform:input title="年级" name="grade" tips="请填写年级" class="w100" value="{$model.grade}" maxlength="20"></Ycform:input>
+
+            <Ycform:input title="年龄" name="age" need="*" datatype="zs" tips="请填写年龄" class="w100" value="{$model.age}" maxlength="2"></Ycform:input>
+
+            <Ycform:input title="出生年月" name="birth" need="*" datatype="*" tips="请填写出生年月" class="w100 Wdate" value="{$model['birth']|date='Y-m-d',###}" onclick="WdatePicker()"></Ycform:input>
+
+            <Ycform:radio title="性别" name="sex" value="{$model['sex']|default=1}" need="*" datatype="*" tips="请选择性别" options="sex"></Ycform:radio>
+
+            <Ycform:input title="身份证号" name="id_card" need="*" datatype="idcard" errormsg="请填写正确的身份证号码" tips="请填写身份证号" class="w200" value="{$model.id_card}" maxlength="18"></Ycform:input>
+
+            <Ycform:input title="个人联系电话" name="self_phone" need="" tips="请填写个人联系电话" errormsg="请填写正确的学号" class="w100" value="{$model.self_phone}" maxlength="11"></Ycform:input>
+
+            <Ycform:input title="家长姓名" name="parent_name" tips="请填写家长姓名" class="w100" value="{$model.parent_name}" maxlength="6"></Ycform:input>
+
+            <Ycform:input title="家长联系电话" name="parent_phone" tips="请填写家长联系电话" class="w100" value="{$model.parent_phone}" maxlength="11"></Ycform:input>
+
+            <Ycform:input title="家庭住址" name="address" tips="请填写家庭住址" class="w400" value="{$model.address}"
+                          maxlength="100"></Ycform:input>
+
+            <Ycform:textarea title="备注" name="remarks" tips="请填写备注" class="w400 h80"
+                             value="{$model['remarks']}"></Ycform:textarea>
+
+            <tr>
+                <td></td>
+                <td colspan="3">
+
+                    <input type="hidden" name="updatetime" value="{:time()}" />
+                    <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                    <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="h10"></div>
+</div>

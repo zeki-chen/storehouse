@@ -1,0 +1,32 @@
+.person_tab { z-index: 2; position: fixed; top: 0.34rem; width: 100%; height: 0.29rem; box-shadow: 0 0.01rem 0.02rem #333; background-color: #fff; }
+.person_tab ul { text-align: center; padding-top: 0.07rem; }
+.person_tab ul li { display: inline; margin: 0.06rem; padding-bottom: 0.04rem; }
+.person_tab .selected { color: #c9141d; border-bottom: 0.02rem solid #c9141d; }
+
+.person_container { margin-top: 0.83rem; }
+.person_container .con_avator { position: relative; width: 0.8rem; height: 0.8rem; margin: 0.14rem auto; overflow: hidden; text-align: center; }
+.person_container .con_avator img { width: 0.8rem; height: 0.8rem; max-height: 100%; max-width: 100%; border-radius: 1rem; margin-bottom: 0.1rem; }
+.person_container .con_avator label { display: block; width: 0.7rem; padding: 0.03rem 0.05rem; background-color: #f7f7f7; color: #333; box-shadow: 0.01rem 0.01rem 0.02rem #000; border-radius: 0.05rem; background-image: url("../image/edit.png"); background-repeat: no-repeat; background-size: 0.12rem 0.12rem; background-position: 95% 50%; }
+.person_container .con_avator .lrz { position: absolute; top: 0; left: 0; width: 0.8rem; height: 0.8rem; opacity: 0; }
+.person_container .per_con { border-top: 0.01rem solid #d6d6d6; background-color: #fff; margin-bottom: 0.18rem; }
+.person_container .per_con .con_list { border-bottom: 0.01rem solid #d6d6d6; line-height: 0.24rem; padding: 0.04rem 0.12rem; position: relative; }
+.person_container .per_con .con_list span { margin-right: 0.05rem; }
+.person_container .per_con .con_list span:nth-child(even) { float: right; }
+.person_container .per_con .con_list .to_edit { position: absolute; top: 0.03rem; right: 0.01rem; }
+.person_container .per_con .con_address { display: block; max-width: 1.8rem; text-align: justify; }
+.person_container .per_mark { padding-bottom: 0.31rem; }
+.person_container .per_mark .term { font-size: 0.13rem; padding: 0 0.12rem; border-bottom: 0.01rem solid #d6d6d6; }
+.person_container .per_mark .mark_list { border-bottom: 0.01rem solid #d6d6d6; height: 0.26rem; line-height: 0.24rem; padding: 0 0.12rem; background-color: #fff; }
+.person_container .per_mark .mark_list span:nth-child(even) { float: right; }
+.person_container .per_mod { background-color: #fff; border: 0.01rem solid #d6d6d6; padding: 0.15rem 0 0.15rem 0.51rem; }
+.person_container .per_mod .mod1 { margin-bottom: 0.18rem; }
+.person_container .per_mod .mod_btn { border: none; border-radius: 0.05rem; background-color: #fb3135; color: #fff; padding: 0.04rem 0.1rem; margin-left: 0.6rem; margin-bottom: 0.1rem; text-align: center; }
+
+.modify_box .title { height: 0.5rem; line-height: 0.5rem; background-color: #c9141d; font-size: 0.18rem; color: #fff; text-align: center; border-top-left-radius: 0.05rem; border-top-right-radius: 0.05rem; }
+.modify_box .content { padding: 0.2rem 0; font-size: 0.14rem; }
+.modify_box .value .modify_input { width: 1.5rem; border: 1px solid #D5D5D6; padding: 0.05rem; }
+.modify_box .value .modify_textarea { display: block; margin: 0 auto; width: 2rem; height: 0.5rem; }
+
+.Validform_wrong { display: block; margin-left: 0.6rem; }
+
+/*# sourceMappingURL=person.css.map */

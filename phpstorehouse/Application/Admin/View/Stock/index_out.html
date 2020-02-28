@@ -1,0 +1,94 @@
+<include file="Public:doctype"/>
+<taglib name="YcPower"/>
+<head>
+    <include file="Public:basicHead"/>
+</head>
+
+<body>
+
+<include file="Public:bread"/>
+
+<div class="rightinfo">
+
+    <div class="tools">
+        <ul class="toolbar">
+            <li class="click">
+                <a href="{:U('Stock/add_out')}">
+                    <span><img src="__PUBLIC__/Admin/images/t01.png"/></span>添加</a>
+            </li>
+            <li class="click">
+                <a href="javascript:delMut('{:U(" Stock/doDel_out")}')">
+                <span><img src="__PUBLIC__/Admin/images/t03.png"/></span>删除</a>
+            </li>
+
+        </ul>
+
+        <form action="{:U('Stock/index_out')}" method="get">
+            <ul class="toolbar1">
+                <li>关键词：
+                    <input type="text" name="keyword" class="scinput" placeholder="请输入关键词" value="{$keyword}"/>
+                </li>
+                <li>
+                    <input type="submit" class="scbtn button_primary" value="查询"/>
+                </li>
+
+            </ul>
+        </form>
+
+    </div>
+
+    <table class="tablelist">
+        <thead>
+        <tr>
+            <th width="60">
+                <label class="">
+                    <input type="checkbox" class="selectAll"/>全选
+                </label>
+            </th>
+            <th class="tl" width="100">出库单号</th>
+            <th width="150">仓库编号</th>
+            <th width="100">操作员编号</th>
+            <th width="100">货单总价</th>
+            <th width="200">入库时间</th>
+            <th width="200">备注</th>
+            <th width="200">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="item" key="k">
+            <tr>
+                <td>
+                    <input type="checkbox" value="{$item.sto_id}" class="del_checkbox"/>
+                </td>
+                <td class="tl">{$item.sto_id}</td>
+                <td>{$item.wa_id}</td>
+                <td>{$item.us_id|default='未填写'}</td>
+
+                <td>{$item.sto_worth|default='未填写'}</td>
+                <td>{$item.sto_time|default='未填写'}</td>
+                <td>{$item.sto_remark}</td>
+                <td>
+                    <a href="{:U('Stock/edit_out',array('student_id'=>$item['sto_id']))}" class="tablelink">编辑</a>
+                    &nbsp;|&nbsp;
+
+
+                    <a class="delBtn tablelink" href="{:U('Stock/doDel_out',array('ids'=>$item['sto_id']))}"
+                       del_title="{$item.name}">删除</a>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+
+    <div class="pagin">
+        {$pages}
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+</body>
+
+</html>

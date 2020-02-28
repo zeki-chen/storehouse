@@ -1,0 +1,74 @@
+.carousel {
+	float:left;
+	overflow: hidden;
+	position: relative;
+	width: 330px;
+	height: 326px;
+	background: #B7B7B7;
+}
+
+.carousel a {
+	color: #eee;
+	text-decoration: none;
+}
+
+.carousel .box {
+	overflow: hidden;
+	position: relative;
+	width: 330px;
+	height: 326px;
+}
+
+.carousel .list {
+	overflow: hidden;
+	width: 9999px;
+}
+
+.carousel .list li {
+	float: left;
+	position: relative;
+	width: 330px;
+}
+
+.carousel .list img {
+	vertical-align: top;
+}
+
+.carousel .list p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 27px;
+	color: #eee;
+	font: 12px/24px "\5b8b\4f53";
+	text-indent: 12px;
+	filter: progid: DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#99000000', endColorstr='#99000000');
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.carousel .btn {
+	overflow: hidden;
+	position: absolute;
+	bottom: 4px;
+	right: 6px;
+}
+
+.carousel .btn li {
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 0 0 0 10px;
+	border-radius: 2px;
+	/*background: #eee;*/
+	color: #fff;
+	font: 11px/16px Tahoma;
+	text-align: center;
+	cursor: pointer;
+}
+
+.carousel .btn .selected {
+	background: #838383;
+	color: #fff;
+}
+

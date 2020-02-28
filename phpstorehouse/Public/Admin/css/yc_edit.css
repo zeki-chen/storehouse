@@ -1,0 +1,31 @@
+.yc_edit{
+    cursor: pointer;
+}
+
+.yc_input{
+    width: 100%;
+    border-top: solid 1px #a7b5bc;
+    border-left: solid 1px #a7b5bc;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
+    text-indent: 10px;
+    line-height: 16px;
+}
+
+.yc_sort{
+    width: 35px;
+    height: 16px;
+    border-top: solid 1px #a7b5bc;
+    border-left: solid 1px #a7b5bc;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
+    text-indent: 10px;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.valid_show{
+    cursor: pointer;
+}

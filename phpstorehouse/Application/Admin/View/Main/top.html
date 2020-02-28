@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<include file="Public:basicHead" />
+	<script type="text/javascript">
+		$(function() {
+			//顶部导航切换
+			$(".nav li a").click(function() {
+				$(".nav li a.selected").removeClass("selected")
+				$(this).addClass("selected");
+				// parent.rightFrame.location.href=$(this).attr('righturl');
+			})
+		})
+	</script>
+
+</head>
+
+<body style="background:url(__PUBLIC__/Admin/images/topbg.gif) repeat-x;">
+<taglib name="YcPower"/>
+<div class="topleft" >
+	<a href="javascript:void(0)" target="_parent">{$sysInfo.title}管理系统</a>
+</div>
+
+<ul class="nav">
+	<!-- <li>
+		<a href="{:U('Main/main')}" target="rightFrame" class="selected"><img src="__PUBLIC__/Admin/images/icon01.png" title="工作台" />
+			<h2>工作台</h2>
+		</a>
+	</li> -->
+	<YcPower:cp power="ArtView,ArtClassView,SurveyView,MemberView,FeedBackView,VisitView,EnterpriseView">
+		<li>
+			<a href="{:U('Main/left')}" righturl="{:U('Art/index',array('model_id'=>13))}" target="leftFrame" class=""><img src="__PUBLIC__/Admin/images/icon16.png" title="资讯管理" />
+				<h2>数据管理</h2>
+			</a>
+		</li>
+	</YcPower:cp>
+
+	<YcPower:cp power="AdminView,AdminRoleView,AdminPowerView">
+		<li>
+			<a href="{:U('Main/left_user')}" righturl="{:U('Admin/index')}" target="leftFrame"><img src="__PUBLIC__/Admin/images/icon13.png" title="用户管理" />
+				<h2>管理员管理</h2>
+			</a>
+		</li>
+	</YcPower:cp>
+
+	<YcPower:cp power="PageLogView,DataBakView,LogSettingView,WebSettingView,ApiSettingView,KeywordView,NavView,ModelView,FieldView">
+		<li>
+			<a href="{:U('Main/left_sys')}" righturl="{:U('PageLog/index')}" target="leftFrame"><img src="__PUBLIC__/Admin/images/icon06.png" title="系统维护" />
+				<h2>系统维护</h2>
+			</a>
+		</li>
+	</YcPower:cp>
+</ul>
+
+<div class="topright">
+	<ul>
+
+		<li><a>{$admin.aname},欢迎您</a></li>
+		<li><a href="__ROOT__/index.php" target="_blank">网站首页</a></li>
+		<li><a href="{:U('Index/quit')}" target="_top" onclick="javascript:parent.loading('退出成功！')">退出</a></li>
+	</ul>
+
+</div>
+
+</body>
+<script type="text/javascript">
+	$(function(){
+		// console.log($('.nav li').size());
+		var li=$('.nav li').first();
+		var a=li.find('a');
+		a.addClass('selected');
+		var href=a.attr('href');
+		if(typeof(href)!='undefined'){
+			parent.leftFrame.location.href=href;
+		}
+	})
+</script>
+
+</html>

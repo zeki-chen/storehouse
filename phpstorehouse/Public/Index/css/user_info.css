@@ -1,0 +1,32 @@
+.mgt { margin-top: 30px; }
+
+.minute .tabs { width: 915px; margin: 0 auto; }
+.minute .tabs .tabs_header { margin-top: 30px; border-bottom: 1px solid #e9e9e9; }
+.minute .tabs .tabs_header li { float: left; }
+.minute .tabs .tabs_header li .tab_item { font-size: 24px; color: #b3b3b3; width: 140px; margin-left: 40px; }
+.minute .tabs .tabs_header li .tab_item img { display: inline; padding: 0 10px; margin-left: 5px; }
+.minute .tabs .tabs_header li .selected { color: #242424; border-bottom: 2px solid #333333; }
+.minute .tabs .tab_box .nbg { background-color: #FFFFFF !important; }
+.minute .tabs .tab_box .tab_content { width: 835px; margin: 30px auto; background-color: #fbfafa; }
+.minute .tabs .tab_box .tab_content .info_box table { font-size: 14px; color: #333333; padding: 20px; width: 680px; margin: 0 auto; border-spacing: 0 30px; }
+.minute .tabs .tab_box .tab_content .info_box table tr .item_name { width: 100px; text-align: right; }
+.minute .tabs .tab_box .tab_content .info_box table tr .short_input { width: 100px; height: 22px; line-height: 22px; text-indent: 3px; border: 1px solid #d1d0d0; border-radius: 4px; }
+.minute .tabs .tab_box .tab_content .info_box table tr .long_input { width: 400px; height: 22px; line-height: 22px; text-indent: 3px; border: 1px solid #d1d0d0; border-radius: 4px; }
+.minute .tabs .tab_box .tab_content .info_box table .sub_btn { width: 80px; height: 28px; margin-left: 240px; line-height: 28px; font-size: 14px; text-align: center; color: #000000; border: none; border-radius: 4px; }
+.minute .tabs .tab_box .tab_content .info_box table .sub_btn:hover { background-color: #E33333; color: #FFFFFF; }
+.minute .tabs .tab_box .tab_content .grade_box { min-height: 306px; }
+.minute .tabs .tab_box .tab_content .grade_box .item { margin-top: 44px; }
+.minute .tabs .tab_box .tab_content .grade_box .item .semester { width: 790px; height: 28px; line-height: 28px; text-indent: 20px; font-size: 14px; color: #333333; background: url("../img/semester.png") no-repeat center; }
+.minute .tabs .tab_box .tab_content .grade_box .item .score_box { font-size: 14px; color: #333333; width: 750px; margin: 30px auto; }
+.minute .tabs .tab_box .tab_content .grade_box .item .score_box .single_subject { float: left; }
+.minute .tabs .tab_box .tab_content .grade_box .item .score_box .single_subject .subject { padding: 17px 18px; border: 1px solid #d6d6d6; text-align: center; }
+.minute .tabs .tab_box .tab_content .grade_box .item .score_box .single_subject .score { padding: 17px 18px; border: 1px solid #d6d6d6; text-align: center; }
+.minute .tabs .tab_box .tab_content .pwd_box { width: 320px; margin: 0 auto; }
+.minute .tabs .tab_box .tab_content .pwd_box .pwd_table { font-size: 14px; color: #333333; border-collapse: separate; border-spacing: 0 40px; }
+.minute .tabs .tab_box .tab_content .pwd_box .pwd_table .item { margin: 200px; }
+.minute .tabs .tab_box .tab_content .pwd_box .pwd_table .item td:first-child { text-align: right; }
+.minute .tabs .tab_box .tab_content .pwd_box .pwd_table .item td .pwd_input { width: 240px; height: 24px; }
+.minute .tabs .tab_box .tab_content .sub_btn { width: 80px; height: 28px; line-height: 28px; margin-left: 117px; font-size: 14px; text-align: center; color: #000000; border: none; border-radius: 4px; }
+.minute .tabs .tab_box .tab_content .sub_btn:hover { background-color: #E33333; color: #FFFFFF; }
+
+/*# sourceMappingURL=user_info.css.map */

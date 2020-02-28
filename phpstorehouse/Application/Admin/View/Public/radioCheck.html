@@ -1,0 +1,27 @@
+<script>
+	$(function(){
+		RadioCheckbox();
+	})
+	function RadioCheckbox(){
+		var box = $("input[type='radio']");
+
+		if(box.length == 0){
+			box = $("input[type='checkbox']");
+		}
+
+		for(var i=0 ; i<box.length; i++){
+			$(box[i]).next().click(function(){
+				if($(this).prev().attr("type") == "checkbox"){
+					if($(this).prev().attr("checked") == "checked"){
+						$(this).prev().removeAttr("checked");
+					}else{
+						$(this).prev().attr("checked","checked");
+					}
+				}else{
+					$(this).prev().attr("checked","checked");
+				}
+
+			})
+		}
+	}
+</script>

@@ -1,0 +1,19 @@
+<taglib name="YcPower"/>
+<include file="Main:left_public_top" />
+	<php>$power=checkPower("PageLogView,DataBakView");</php>
+    <eq name="power" value="1">
+		<dd>
+			<div class="title">
+				<span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>安全管理
+			</div>
+			<ul class="menuson">
+				<YcPower:cp power="PageLogView"><li><cite></cite><a href="{:U('PageLog/index')}" target="rightFrame">后台日志</a><i></i></li></YcPower:cp>
+
+                <YcPower:cp power="DataBakView"><li><cite></cite><a href="{:U('SysData/index')}" target="rightFrame">数据备份</a><i></i></li></YcPower:cp>
+
+			</ul>
+		</dd>
+	</eq>
+
+
+<include file="Main:left_public_foot" />

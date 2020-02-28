@@ -1,0 +1,38 @@
+<taglib name="Ycform" />
+<div class="     ">
+    <div class="formtitle ">
+        <span>学生成绩信息</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <table class="formtable ">
+            <tbody>
+            <Ycform:input title="学号" name="student_number" need="*" datatype="nz" tips="请填写学号" errormsg="请填写正确的学号" class="w100" value="{$model.student_number}" maxlength="11"></Ycform:input>
+
+            <Ycform:input title="学生姓名" name="name" need="*" datatype="*" tips="请填写学生姓名" class="w100" value="{$model.name}" maxlength="6"></Ycform:input>
+
+            <Ycform:input title="身份证号" name="id_card" need="*" datatype="idcard" errormsg="请填写正确的身份证号码" tips="请填写身份证号" class="w200" value="{$model.id_card}" maxlength="18"></Ycform:input>
+
+            <Ycform:input title="学期" name="semester" need="*" datatype="*" tips="请填写学期，格式如：2013-2016-3" class="w100" value="{$model.semester}" maxlength="20"></Ycform:input>
+
+            <Ycform:input title="课程名" name="subject" need="*" datatype="*" tips="请填写输课程名" class="w100" value="{$model.subject}" maxlength="20"></Ycform:input>
+
+            <Ycform:input title="成绩" name="score" need="*" datatype="zs,cj" tips="请填写成绩" errormsg="请填写正确的成绩，数值范围：0-100" class="w100" value="{$model.score}" maxlength="5"></Ycform:input>
+
+            <tr>
+                <td></td>
+                <td colspan="3">
+
+                    <input type="hidden" name="updatetime" value="{:time()}" />
+                    <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                    <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="h10"></div>
+</div>
+

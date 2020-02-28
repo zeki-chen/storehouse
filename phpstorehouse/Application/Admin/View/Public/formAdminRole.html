@@ -1,0 +1,79 @@
+<taglib name="Ycform" />
+<div class="     ">
+	<div class="formtitle ">
+		<span>角色信息</span>
+		<div class="slideup slideup_sub" tabid="tabid1"></div>
+	</div>
+	<div class="tab mt10" id="tabid1">
+		<table class="formtable ">
+			<tbody>
+
+				<Ycform:input title="角色名称" name="ar_name" need="*" datatype="*" tips="请填写角色名称" class="w300" value="{$model.ar_name}"></Ycform:input>
+
+				<tr>
+					<td class="ft_title">权限范围</td>
+					<td>
+						<table class="pct100">
+							<foreach name="codes" item="fitem" key="item_key">
+								<foreach name="fitem.list" item="item" key="key">
+
+								<tr>
+									<eq name="key" value="0">
+										<td class="bg_f5 tc w80" rowspan="{:count($fitem['list'])}">
+											{$fitem.name}
+										</td>
+									</eq>
+									<td class="tr w120">
+										{$item.name}：
+									</td>
+									<td>
+										<label class="radio-inline w60 tc bds bg_f5 dis_inb selectAllChkRadio">
+											<span class=" selectAllChk cursor " classval="item_{$item.name}" chk="checked" />全选</span>
+										</label>
+										<foreach name="item.list" item="sitem">
+											<label class="radio-inline">
+												<input type="checkbox" name="ap_codes[]" value="{$sitem.ap_code}" <in name="sitem.ap_code" value="$model['ap_codes']">checked="checked"</in> class="classItem item_{$item.name}" > {$sitem.ap_name}
+											</label>
+										</foreach>
+									</td>
+								</tr>
+								</foreach>
+							</foreach>
+						</table>
+					</td>
+				</tr>
+
+				<Ycform:input title="排序" name="sort" need="*" datatype="n" tips="请填写排序" class="w200" value="{$model.sort|default=99}"></Ycform:input>
+
+				<Ycform:radio title="是否有效" name="valid" value="{$model.valid|default=1}" need="*" datatype="*" tips="请选择是否有效" options="yesno"></Ycform:radio>
+
+				<tr>
+					<td></td>
+					<td colspan="3">
+						<input type="hidden" name="updatetime" value="{:time()}" />
+						<input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+						<input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
+	<div class="h10"></div>
+</div>
+<script>
+	//全选
+	$(".selectAllChkRadio").click(function() {
+		
+		//var chkList = $("." + $(this).attr("classval"));
+		var spanBtn=$(this).children("span");
+		if (spanBtn.attr("chk") == "checked") {
+			$("." + spanBtn.attr("classval")).attr("checked", "checked");
+			spanBtn.attr("chk","123").html("全不选");
+		} else {
+			$("." +spanBtn.attr("classval")).removeAttr("checked","");
+			spanBtn.attr("chk","checked").html("全选");
+		}
+	});
+</script>

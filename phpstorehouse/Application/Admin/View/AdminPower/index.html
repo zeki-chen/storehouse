@@ -1,0 +1,107 @@
+<include file="Public:doctype" />
+<taglib name="YcPower"/>
+	<head>	
+		<include file="Public:basicHead" />
+	</head>
+
+	<body>
+
+		<include file="Public:bread" />
+
+		<div class="rightinfo">
+
+			<div class="tools">
+				<ul class="toolbar">
+					<YcPower:cp power="AdminPowerAdd">
+					<li class="click">
+						<a href="{:U('AdminPower/add')}">
+						<span><img src="__PUBLIC__/Admin/images/t01.png" /></span>添加</a>
+					</li>
+					</YcPower:cp>
+					<YcPower:cp power="AdminPowerDel">
+					<li class="click">
+						<a href="javascript:delMut('{:U("AdminPower/doDel")}')">
+						<span><img src="__PUBLIC__/Admin/images/t03.png" /></span>删除</a>
+					</li>
+					</YcPower:cp>
+				</ul>
+
+				<form action="{:U('AdminPower/index')}" method="get">
+					<ul class="toolbar1">
+						<li>关键词：
+							<input type="text" name="keyword" class="scinput" placeholder="请输入关键词" value="{$keyword}" />
+						</li>
+						<li>
+							<input type="submit" class="scbtn button_primary" value="查询" />
+						</li>
+
+					</ul>
+				</form>
+
+			</div>
+
+			<table class="tablelist">
+				<thead>
+					<tr>
+						<th width="60">
+							<label class="">
+								<input type="checkbox" class="selectAll" />全选
+							</label>
+						</th>
+						<th class="tl">权限代码</th>
+						<th>权限名称</th>
+						<th>权限分组</th>
+						<th width="60">是否有效</th>
+						<YcPower:cp power="AdminPowerEdit,AdminPowerDel">
+						<th width="160">操作</th>
+						</YcPower:cp>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="list" item="item" key="k">
+						<tr><input class="id" type="hidden" name="ap_id" value="{$item.ap_id}"/>
+							<td>
+								<input type="checkbox" value="{$item.ap_id}" class="del_checkbox" />
+							</td>
+							<td class="tl yc_edit"><span name="ap_code">{$item.ap_code}</span></td>
+							<td class="yc_edit"><span name="ap_name">{$item.ap_name}</span></td>
+							<td class="yc_edit"><span name="ap_group">{$item.ap_group}</span></td>
+							<td class="valid_show">
+								<foreach name="yesno" item="itemY">
+									<eq name="itemY.value" value="$item['valid']"><span name="valid">{$itemY.key}</span></eq>
+								</foreach>
+							</td>
+							<YcPower:cp power="AdminPowerEdit,AdminPowerDel">
+							<td>
+								<YcPower:cp power="AdminPowerEdit">
+								<a href="{:U('AdminPower/edit',array('ap_id'=>$item['ap_id']))}" class="tablelink">编辑</a> &nbsp;|&nbsp;
+								</YcPower:cp>
+								<YcPower:cp power="AdminPowerDel">
+								<a class="delBtn tablelink" href="{:U('AdminPower/doDel',array('ids'=>$item['ap_id']))}" del_title="{$item.ap_code}">删除</a>
+								</YcPower:cp>
+							</td>
+							</YcPower:cp>
+						</tr>
+					</foreach>
+				</tbody>
+			</table>
+
+			<div class="pagin">
+				{$pages}
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			$('.tablelist tbody tr:odd').addClass('odd');
+		</script>
+		<YcPower:cp power="AdminPowerEdit">
+		<script type="text/javascript">
+			var yc_url="{:U('AdminBase/quickEdit')}";
+			var table="admin_power";
+		</script>
+		<script src="__PUBLIC__/Admin/js/yc_edit.js"></script>
+		</YcPower:cp>
+	</body>
+
+</html>

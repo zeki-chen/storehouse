@@ -1,0 +1,64 @@
+.minute {
+    .list_box {
+        float: left;
+        width: 693px;
+        margin-top: 31px;
+    }
+    .essay_list {
+        .item {
+            width: 667px;
+            height: 128px;
+            margin: 25px auto 0;
+            a {
+                &:hover{
+                    background: #f6f6f6;
+                }
+                .cover {
+                    float: left;
+                    padding: 14px 12px;
+                    width: 150px;
+                    height: 100px;
+                    overflow: hidden;
+                }
+                .matter {
+                    float: left;
+                    width: 456px;
+                    line-height: 1.5;
+                    padding: 14px 15px;
+                    .title {
+                        font-size: 14px;
+                        color: #333333;
+                        width: 400px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .sub {
+                        font-size: 12px;
+                        color: #777777;
+                        text-align: justify;
+                    }
+                    .read {
+                        float: left;
+                        margin-top: 4px;
+                        background: url("../img/read.png") no-repeat left;
+                        background-size: 13px 8px;
+                        text-indent: 17px;
+                        font-size: 12px;
+                        color: #555555;
+                    }
+                    .date {
+                        float: left;
+                        margin-top: 4px;
+                        margin-left: 35px;
+                        background: url("../img/date.png") no-repeat left;
+                        background-size: 9px 10px;
+                        text-indent: 15px;
+                        font-size: 12px;
+                        color: #555555;
+                    }
+                }
+            }
+        }
+    }
+}

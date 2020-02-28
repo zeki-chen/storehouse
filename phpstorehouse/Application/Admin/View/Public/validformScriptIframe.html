@@ -1,0 +1,32 @@
+<script>
+	var validForm = null
+	$(function() {
+		validForm = $(".mainform").Validform({
+			tiptype: 4,
+			datatype: {
+				"nz": /^[1-9]\d*$/,
+				"zs": /^([1-9]\d*\.\d*|0\.\d+|[1-9]\d*|0)$/ //正数
+			},
+			ignoreHidden: true,
+			showAllError: true,
+			ajaxPost: true,
+			beforeSubmit: function(curform) {
+				loading("正在提交");
+			},
+			callback: function(data) {
+				if (data.status == 1) {
+					msgOK(data.info);
+					parent.mapReload();
+					//parent.window.location.reload();
+				} else {
+					msgFaild(data.info);
+				}
+				if (data.url) {
+					//loading("正在提交");
+					loading(data.info + ",跳转中...");
+					hrefTo(data.url, 500)
+				}
+			}
+		});
+	});
+</script>

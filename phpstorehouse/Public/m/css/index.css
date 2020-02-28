@@ -1,0 +1,36 @@
+.zz_top { font-size: 0.12rem; background-color: #c9141d; height: 0.34rem; position: fixed; top: 0; z-index: 2; width: 100%; }
+.zz_top .top_search { float: left; position: relative; width: 2.56rem; box-sizing: border-box; padding-top: 0.08rem; padding-left: 0.16rem; }
+.zz_top .top_search .search_content { padding-right: 0.2rem; box-sizing: border-box; width: 2.3rem; height: 0.18rem; border-radius: 0.05rem; border: none; text-indent: 0.12rem; }
+.zz_top .top_login { width: 0.6rem; height: 0.2rem; position: absolute; right: 0.02rem; top: 0.11rem; color: #fff; }
+.zz_top a { display: block; }
+.zz_top .top_logined { line-height: 0.2rem; text-indent: 0.04rem; width: 0.68rem; height: 0.18rem; position: absolute; right: 0.02rem; top: 0.08rem; background-image: url("../image/person.png"); background-size: 0.68rem 0.2rem; background-position: 100% 45%; background-repeat: no-repeat; }
+
+.search_btn { width: 0.14rem; height: 0.14rem; position: absolute; top: 0.11rem; right: 0.14rem; background-color: #fff; border: none; background-image: url("../image/search.png"); background-repeat: no-repeat; background-size: cover; }
+
+.swiper-container-l { width: 100%; height: 1.5rem; margin-top: 0.66rem; }
+.swiper-container-l .swiper-slide { background: #fff; overflow: hidden; position: relative; }
+.swiper-container-l .swiper-slide img { width: 100%; height: 100%; max-height: 100%; max-width: 100%; }
+.swiper-container-l .swiper-slide .slide-title { position: absolute; bottom: 0; width: 100%; height: 0.22rem; padding-top: 0.05rem; padding-left: 0.05rem; background-color: rgba(0, 0, 0, 0.6); color: #f7f7f7; }
+
+.zz_schoolitem { margin-top: 0.07rem; background-color: #fff; height: 1.12rem; box-sizing: border-box; padding: 0.12rem; }
+.zz_schoolitem .si_con { box-sizing: border-box; }
+.zz_schoolitem .si_con a { float: left; }
+.zz_schoolitem .si_con a img { float: left; width: 1.4rem; height: 0.29rem; margin-top: 0.08rem; }
+.zz_schoolitem .si_con a img:nth-child(even) { margin-left: 0.14rem; }
+.zz_schoolitem .si_con a:nth-child(even) { margin-left: 0.14rem; }
+
+.con_head { color: #333; position: relative; }
+.con_head span { margin-left: 0.06rem; font-weight: 500; }
+.con_head::before { content: ""; position: absolute; top: -0.01rem; width: 1px; height: 0.17rem; color: #c9141d; background-color: #c9141d; }
+
+.zz_postmess { margin-top: 0.07rem; background-color: #fff; box-sizing: border-box; padding: 0.12rem; }
+.zz_postmess .pm_list { margin-top: 0.16rem; }
+.zz_postmess .pm_list .pm_plot { width: 0.75rem; height: 0.5rem; max-height: 100%; max-width: 100%; float: left; }
+.zz_postmess .pm_list .list_con { font-size: 0.12rem; margin-left: 0.83rem; }
+.zz_postmess .pm_list .list_con a { color: #333; }
+.zz_postmess .pm_list .list_con .con_title:hover { color: #c9141d; }
+.zz_postmess .pm_list .list_con .con_time { margin-top: 0.05rem; }
+.zz_postmess .pm_list .list_con .con_time .dateicon { width: 0.11rem; height: 0.11rem; margin-right: 0.04rem; }
+.zz_postmess .pm_list .list_con .con_time span { font-size: 0.1rem; color: #555; }
+
+/*# sourceMappingURL=index.css.map */

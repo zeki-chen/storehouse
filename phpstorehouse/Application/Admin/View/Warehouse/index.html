@@ -1,0 +1,89 @@
+<include file="Public:doctype"/>
+<taglib name="YcPower"/>
+<head>
+    <include file="Public:basicHead"/>
+</head>
+
+<body>
+
+<include file="Public:bread"/>
+
+<div class="rightinfo">
+
+    <div class="tools">
+        <ul class="toolbar">
+            <li class="click">
+                <a href="{:U('Warehouse/add')}">
+                    <span><img src="__PUBLIC__/Admin/images/t01.png"/></span>添加</a>
+            </li>
+            <li class="click">
+                <a href="javascript:delMut('{:U(" Warehouse/doDel")}')">
+                <span><img src="__PUBLIC__/Admin/images/t03.png"/></span>删除</a>
+            </li>
+        </ul>
+
+        <form action="{:U('Warehouse/index')}" method="get">
+            <ul class="toolbar1">
+                <li>关键词：
+                    <input type="text" name="keyword" class="scinput" placeholder="请输入关键词" value="{$keyword}"/>
+                </li>
+                <li>
+                    <input type="submit" class="scbtn button_primary" value="查询"/>
+                </li>
+
+            </ul>
+        </form>
+
+    </div>
+
+    <table class="tablelist">
+        <thead>
+        <tr>
+            <th width="60">
+                <label class="">
+                    <input type="checkbox" class="selectAll"/>全选
+                </label>
+            </th>
+            <th class="tl" width="100">编号</th>
+            <th width="150">仓库名称</th>
+            <th width="100">仓库地址</th>
+            <th width="100">仓库容量</th>
+            <th width="100">仓库已用容量</th>
+            <th width="200">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="list" item="item" key="k">
+            <tr>
+                <td>
+                    <input type="checkbox" value="{$item.wa_id}" class="del_checkbox"/>
+                </td>
+                <td class="tl">{$item.wa_id}</td>
+                <td>{$item.wa_name}</td>
+                <td>{$item.wa_address|default='未填写'}</td>
+                <td>{$item.wa_size|default='未填写'}</td>
+                <td>{$item.wa_sizeout|default='未填写'}</td>
+                <td>
+                    <a href="{:U('Warehouse/edit',array('student_id'=>$item['wa_id']))}" class="tablelink">编辑</a> &nbsp;|&nbsp;
+
+
+                    <a class="delBtn tablelink" href="{:U('Warehouse/doDel',array('ids'=>$item['wa_id']))}"
+                       del_title="{$item.name}">删除</a>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+
+    <div class="pagin">
+        {$pages}
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<taglib name="YcPower"/>
+<include file="Main:left_public_top" />
+    <php>$power=checkPower("AdminView,AdminRoleView,AdminPowerView");</php>
+    <eq name="power" value="1">
+        <dd>
+            <div class="title">
+                <span><img src="__PUBLIC__/Admin/images/leftico01.png" /></span>系统管理员
+            </div>
+            <ul class="menuson">
+                <YcPower:cp power="AdminView"><li><cite></cite><a href="{:U('Admin/index')}" target="rightFrame">管理员管理</a><i></i></li></YcPower:cp>
+                <YcPower:cp power="AdminRoleView"><li><cite></cite><a href="{:U('AdminRole/index')}" target="rightFrame">角色管理</a><i></i></li></YcPower:cp>
+                <YcPower:cp power="AdminPowerView"><li><cite></cite><a href="{:U('AdminPower/index')}" target="rightFrame">权限代码管理</a><i></i></li></YcPower:cp>
+            </ul>
+        </dd>
+    </eq>
+<include file="Main:left_public_foot" />

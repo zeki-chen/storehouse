@@ -1,0 +1,24 @@
+.linkus_con{
+	margin-top: 0.7rem;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding: 0.1rem 0.12rem;
+	.con_title{
+		font-size: 0.16rem;
+		color: #c9141d;
+		margin-bottom: 0.1rem;
+	}
+	.link_way{
+		margin: 0.1rem;
+	}
+	.link_address{
+		width: 1.4rem;
+		background-color: #c9141d;
+		color: #fff;
+		font-size: 0.12rem;
+		border-radius: 0.1rem;
+		text-align: center;
+		padding: 0.05rem 0;
+		margin-left: 0.1rem;
+	}
+}

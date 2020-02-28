@@ -1,0 +1,41 @@
+.minute{
+    .list_box{
+        float:left;
+        width:693px;
+        margin-top: 31px;
+    }
+    
+    .essay_list{
+        ul{
+            margin-top: 12px;
+            li{
+                margin-left: 31px;
+                height: 34px;
+                line-height: 34px;
+                font-size: 15px;
+                padding: 2px 0;
+                background: url("../img/list_arrow.png") no-repeat left;
+                background-size: 12px;
+                text-indent: 23px;
+                a{
+                    color:#333333;
+                    &:hover{
+                        color:#D32F2F;
+                    }
+                }
+              .title {
+                    float: left;
+                    max-width: 520px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .date {
+                    float: right;
+                    font-size: 12px;
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+}

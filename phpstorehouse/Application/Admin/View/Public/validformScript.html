@@ -1,0 +1,78 @@
+<script>
+	var validForm = null
+	var flag = false;
+	$(function() {
+
+		if($("#content").size()){
+			$(window).bind('beforeunload',function(){
+				return '您输入的内容尚未保存，确定离开此页面吗？';
+			});
+		}
+
+		validForm = $(".mainform").Validform({
+			tiptype: 4,
+			datatype: {
+                "null":function(gets,obj,curform){
+                    return true;
+                },
+                "dz":/^-?([1-9]+(\.(\d*)|0)?)|(0(\.\d+){1})$/, //经纬度验证
+				"nz": /^[1-9]\d*$/,//正整数
+				"zs": /^([1-9]\d*\.\d*|0\.\d+|[1-9]\d*|0)$/, //正数
+				"wz":/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/,//网址
+				"ip":/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/,  //ip
+                "idcard":/^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/,//身份证号码
+                "checkName":function(gets,obj,curform){
+                    var aname = gets;
+                    var url_check = "{:U('Admin/checkName')}";
+                    $.ajax({
+                        data:{'aname':aname},
+                        type:"POST",
+                        url:url_check,
+                        async:false,
+                        datatype:'json',
+                        success:function(data){
+                            if(data.status==1){
+                                flag = true;
+                            }else{
+                                flag = false;
+                            }
+                        }
+                    });
+                    return flag;
+                },
+                
+                "cj":function(gets,obj,curform){
+                    var score = gets;
+                    if(score>100){
+                        return false;
+                    }
+                },
+ 				"file":function(gets,obj,curform){
+ 					var fileCount=gets;
+ 					if(fileCount<=0)
+ 						return false;
+ 				}
+			//注意return可以返回true 或 false 或 字符串文字，true表示验证通过，返回字符串表示验证失败，字符串作为错误提示显示，返回false则用errmsg或默认的错误提示;
+			},
+			ignoreHidden: ignoreHid,
+			showAllError: true,
+			ajaxPost: true,
+			beforeSubmit: function(curform) {
+				loading("正在提交");
+			},
+			callback: function(data) {
+				if (data.status == 1) {
+					msgOK(data.info);
+				} else {
+					msgFaild(data.info);
+				}
+				if (data.url) {
+					//loading("正在提交");
+					$(window).unbind('beforeunload');
+					loading(data.info + ",跳转中...");
+					hrefTo(data.url, 500)
+				}
+			}
+		});
+	});
+</script>

@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="Public:basicHead"/>
+  <script src="__PUBLIC__/incubator-echarts-4.2.1/dist/echarts.min.js"></script>
+  <script src="__PUBLIC__/incubator-echarts-4.2.1/test/lib/esl.js"></script>
+<script src="__PUBLIC__/incubator-echarts-4.2.1/test/lib/config.js"></script>
+<!-- <script src="__PUBLIC__/incubator-echarts-4.2.1/test/lib/jquery.min.js"></script> -->
+<script src="__PUBLIC__/incubator-echarts-4.2.1/test/lib/facePrint.js"></script>
+ <link rel="stylesheet" href="__PUBLIC__/incubator-echarts-4.2.1/test/lib/reset.css">
+</head>
+<body>
+<include file="Public:bread"/>
+<div class="mainindex">
+	<div class="welinfo">
+		<span><img src="__PUBLIC__/Admin/images/sun.png" alt="天气" /></span>
+		<b>您好，{$admin.aname}，欢迎使用{$sysInfo.title}后台管理系统</b>
+	</div>
+   <b>节点1近期情况：</b>
+
+  <div id="sync" style="height:400px;"></div>
+   <script>
+
+            var echarts;
+            var colorTool;
+            var chart;
+            var myChart;
+            var groupCategories = [];
+            var groupColors = [];
+           
+            var j={$jiedian};
+             var axisData=new Array();
+                for(var i in j)
+               {axisData[i]=j[i]['time'];}
+           //  echarts = ec;
+            colorTool = echarts.color;
+             chart = myChart = echarts.init(document.getElementById('sync'));
+
+            var  option = {
+                    dataZoom:[
+                        {type:'slider',show:'true',xAxisIndex: [0, 1] },
+                        {type:'inside',show:'true',xAxisIndex: [0, 1] },
+                        {type:'inside',show:'true',xAxisIndex: [0, 1] }
+                    ],
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: {
+                                show: true,
+                                readOnly: false
+                            },
+                            restore: {
+                                show: true
+                            },
+                            saveAsImage: {
+                                show: true
+                            }
+                        }
+                    },
+                    grid: {
+                        containLabel: true
+                    },
+                    legend: {
+                        data: ['温度','湿度','光照']
+                    },
+                    xAxis: [{
+                        type: 'category',
+                        axisTick: {
+                            alignWithLabel: true
+                        },
+                        data: axisData
+                    },
+                    {
+                        type: 'category',
+                        axisTick: {
+                            alignWithLabel: true
+                        },
+                        data:axisData
+                    },
+                    {
+                        type: 'category',
+                        axisTick: {
+                            alignWithLabel: true
+                        },
+                        data:axisData
+                    }],
+                    yAxis: [{
+                        type: 'value',
+                        name: '单位',
+                        min: 0,
+                        max: 500,
+                        position: 'left'
+                    }],
+                    series: [{
+                        name: '温度',
+                        type: 'line',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top',
+                            }
+                        },
+                        lineStyle: {
+                            normal: {
+                                width: 3,
+                                shadowColor: 'rgba(0,0,0,0.4)',
+                                shadowBlur: 10,
+                                shadowOffsetY: 10
+                            }
+                        },
+                        data: []
+                    }, {
+                        name: '湿度',
+                        type: 'line',
+                        yAxisIndex: 0,
+                        xAxisIndex:1,
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top'
+                            }
+                        },
+                        data:  [
+                        ]
+                    },
+                    {
+                        name: '光照',
+                        type: 'line',
+                        yAxisIndex: 0,
+                        xAxisIndex:1,
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top'
+                            }
+                        },
+                        data:  [
+                        ]
+                    }]
+                };
+
+                 for(var i in j)
+               {
+               option['series'][0]['data'][i]=[j[i]['time'],j[i]['wendu1']];
+               option['series'][1]['data'][i]=[j[i]['time'],j[i]['shidu1']];
+               option['series'][2]['data'][i]=[j[i]['time'],j[i]['guangzhao1']];
+               }
+                chart.setOption(option);
+
+        </script>
+
+</body>
+</html>

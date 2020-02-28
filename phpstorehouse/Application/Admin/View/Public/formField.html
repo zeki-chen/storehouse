@@ -1,0 +1,137 @@
+<taglib name="Ycform" />
+<div class="     ">
+    <div class="formtitle ">
+        <span>字段配置信息</span>
+        <div class="slideup slideup_sub" tabid="tabid1"></div>
+    </div>
+    <div class="tab mt10" id="tabid1">
+        <table class="formtable ">
+            <tbody>
+            <Ycform:input title="字段名称" name="field_name" need="*" datatype="*" tips="请填写字段名称" class="w200" value="{$model.field_name}"></Ycform:input>
+
+            <Ycform:input title="数据库字段代码" name="code" need="*" datatype="*" tips="请填写数据库字段代码" class="w200" value="{$model.code}"></Ycform:input>
+
+            <Ycform:input title="样式" name="css" need="" datatype="" tips="请填写样式" class="w200" value="{$model.css}"></Ycform:input>
+
+            <Ycform:input title="输入提示" name="tips" need="" datatype="" tips="请填写输入提示" class="w200" value="{$model.tips}"></Ycform:input>
+
+            <Ycform:input title="排序" name="sort" need="*" datatype="n" tips="请填写排序" class="w200" value="{$model.sort|default=99}"></Ycform:input>
+
+            </tr>
+
+            <tr>
+                <td class="ft_title">输入类型</td>
+                <td colspan="3">
+                    <label class="radio-inline"><input type="radio" name="type" value="0" class="ycRadio" <eq name="model['type']|default=0" value="0">checked="checked"</eq>/>单行文本框</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="1" class="ycRadio" <eq name="model['type']" value="1">checked="checked"</eq>/>多行文本框</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="3" class="ycRadio" <eq name="model['type']" value="3">checked="checked"</eq>/>文本编辑器</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="4" class="ycRadio" <eq name="model['type']" value="4">checked="checked"</eq>/>时间选择框</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="5" class="ycRadio" <eq name="model['type']" value="5">checked="checked"</eq>/>单选按钮</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="6" class="ycRadio" <eq name="model['type']" value="6">checked="checked"</eq>/>图片上传</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="7" class="ycRadio" <eq name="model['type']" value="7">checked="checked"</eq>/>文件上传</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="8" class="ycRadio" <eq name="model['type']" value="8">checked="checked"</eq>/>视频上传</label>
+                </td>
+            </tr>
+            <tr id="albumSet" style="display: none">
+                <td class="ft_title">图片上传详细设置</td>
+                <td>
+                    <div class="mt5 mb5">
+                        <span>是否压缩</span>
+                        <label class="radio-inline"><input type="radio" name="compress" value="1" class="ycRadio" <eq name="model['compress']|default=1" value="1">checked="checked"</eq>/>是</label>
+                        <label class="radio-inline"><input type="radio" name="compress" value="0" class="ycRadio" <eq name="model['compress']" value="0">checked="checked"</eq>/>否</label>
+                    </div>
+                    <div class="mt5 mb5">图片上传数量限制<input type="text" name="count" value="{$model['count']|default=30}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写图片上传数量限制" errormsg="请填写正确的数量限制">张</div>
+                    <div class="mt5 mb5">图片上传总大小限制<input type="text" name="sumsize" value="{$model['sumsize']|default=60}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写图片上传总大小限制" errormsg="请填写正确的大小限制">M</div>
+                    <div class="mt5 mb5">图片上传单文件大小限制<input type="text" name="singlesize" value="{$model['singlesize']|default=2}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写图片单文件大小限制" errormsg="请填写正确的单文件大小限制">M</div>
+                </td>
+            </tr>
+
+            <tr id="attachSet" style="display: none">
+                <td class="ft_title">文件上传详细设置</td>
+                <td>
+                    <div class="mt5 mb5">附件上传数量限制<input type="text" name="count" value="{$model['count']|default=10}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写附件上传数量限制" errormsg="请填写正确的数量限制">个</div>
+                    <div class="mt5 mb5">附件上传总大小限制<input type="text" name="sumsize" value="{$model['sumsize']|default=300}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写附件上传总大小限制" errormsg="请填写正确的大小限制">M</div>
+                    <div class="mt5 mb5">附件上传单文件大小限制<input type="text" name="singlesize" value="{$model['singlesize']|default=30}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写附件单文件大小限制" errormsg="请填写正确的单文件大小限制">M</div>
+                </td>
+            </tr>
+
+            <tr id="videoSet" style="display: none">
+                <td class="ft_title">视频上传详细设置</td>
+                <td>
+                    <div class="mt5 mb5">视频上传数量限制<input type="text" name="count" value="{$model['count']|default=10}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写视频上传数量限制" errormsg="请填写正确的数量限制">个</div>
+                    <div class="mt5 mb5">视频上传总大小限制<input type="text" name="sumsize" value="{$model['sumsize']|default=300}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写视频上传总大小限制" errormsg="请填写正确的大小限制">M</div>
+                    <div class="mt5 mb5">视频上传单文件大小限制<input type="text" name="singlesize" value="{$model['singlesize']|default=30}" class="ml10 mr10 bds inp  w20" datatype="n" nullmsg="请填写视频单文件大小限制" errormsg="请填写正确的单文件大小限制">M</div>
+                </td>
+            </tr>
+
+            <Ycform:radio title="是否有效" name="valid" value="{$model.valid|default=1}" need="*" datatype="*" tips="请选择是否有效" options="yesno"></Ycform:radio>
+
+            <tr>
+                <td></td>
+                <td colspan="3">
+
+                    <input type="hidden" name="updatetime" value="{:time()}" />
+                    <input type="submit" value="保存" class="btn button_primary btnsave" status="0">
+                    <input type="button" value="返回" class="btn button_success btnsave" onclick="javascript:history.go(-1)" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="h10"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#albumSet input").attr('disabled','true');
+        $("#attachSet input").attr('disabled','true');
+        $("#videoSet input").attr('disabled','true');
+        var status={$model['type']|default=1};
+        if(status==6){
+            $("#albumSet").css('display','');
+            $("#albumSet input").removeAttr('disabled');
+        }else if(status==7){
+            $("#attachSet").css('display','');
+            $("#attachSet input").removeAttr('disabled');
+        }else if(status==8){
+            $("#videoSet").css('display','');
+            $("#videoSet input").removeAttr('disabled');
+        }
+        $("input[name='type']").change(statusChange);
+    });
+
+    function statusChange(){
+        var value=$(this).val();
+        if(value==6){
+            $("#albumSet").css('display','');
+            $("#albumSet input").removeAttr('disabled');
+            $("#attachSet").css('display','none');
+            $("#attachSet input").attr('disabled','true');
+            $("#videoSet").css('display','none');
+            $("#videoSet input").attr('disabled','true');
+        }else if(value==7){
+            $("#attachSet").css('display','');
+            $("#attachSet input").removeAttr('disabled');
+            $("#albumSet").css('display','none');
+            $("#albumSet input").attr('disabled','true');
+            $("#videoSet").css('display','none');
+            $("#videoSet input").attr('disabled','true');
+        }else if(value==8){
+            $("#videoSet").css('display','');
+            $("#videoSet input").removeAttr('disabled');
+            $("#albumSet").css('display','none');
+            $("#albumSet input").attr('disabled','true');
+            $("#attachSet").css('display','none');
+            $("#attachSet input").attr('disabled','true');
+        }else{
+            $("#albumSet").css('display','none');
+            $("#attachSet").css('display','none');
+            $("#videoSet").css('display','none');
+            $("#attachSet input").attr('disabled','true');
+            $("#albumSet input").attr('disabled','true');
+            $("#videoSet input").attr('disabled','true');
+        }
+    }
+</script>
+
